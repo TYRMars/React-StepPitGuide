@@ -2,7 +2,7 @@ const ADD = 'add';
 const REDUCE = 'reduce';
 
 // reducer
-exports.counter = function (state=0,action) {
+export function counter(state=0,action) {
   switch (action.type) {
     case 'add':
       return state+1;
@@ -13,10 +13,21 @@ exports.counter = function (state=0,action) {
   }
 };
 
+//提交action，reducer就会执行
+
 // action creator
-exports.add = function () {
+export function add() {
   return {type:ADD};
 };
-exports.reduce = function () {
+export function reduce() {
   return {type:REDUCE};
 };
+
+export function addAsync() {
+  return dispatch=>{
+    setTimeout(
+      ()=>{
+        dispatch(add())
+      },2000)
+  }
+}
