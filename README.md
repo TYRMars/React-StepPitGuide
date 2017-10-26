@@ -417,4 +417,41 @@ export default App
 ```
 
 * Connect可以用装饰器的方式来书写
-  - npm run eject弹出个性化配置
+  - `npm run eject`弹出个性化配置
+  - `npm install babel-plugin-transform-decorators-legacy`
+  - `Package.json`里babel加上`plugins`配置
+
+```JavaScript
+import React from 'react'
+import {connect} from 'react-redux'
+import {add,reduce,addAsync} from './index.redux'
+
+@connect(
+  // 你要state什么属性放到props
+  (state) => {
+  return {num:state}},
+  {add,reduce,addAsync}
+)
+
+class App extends React.Component {
+  // constructor() {
+  //
+  // }
+  render(){
+    const num = this.props.num
+    const add = this.props.add
+    const reduce = this.props.reduce
+    const addAsync = this.props.addAsync
+    return(
+      <div>
+      <h1>展示dedux数据{num}</h1>
+      <button onClick={add}>➕加1</button>
+      <button onClick={reduce}>➖减1</button>
+      <button onClick={addAsync}>➕加1(两秒以后)</button>
+      </div>
+    )
+  }
+}
+
+export default App
+```

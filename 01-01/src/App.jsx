@@ -1,6 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {add,reduce,addAsync} from './index.redux'
+
+const mapStatetoProps = (state) => {
+  return {num:state}
+}
+const acitonCreators = {add,reduce,addAsync}
+
+// App = connect(mapStatetoProps,acitonCreators)(App)
+@connect(mapStatetoProps,acitonCreators)
+
 class App extends React.Component {
   // constructor() {
   //
@@ -20,10 +29,5 @@ class App extends React.Component {
     )
   }
 }
-const mapStatetoProps = (state) => {
-  return {num:state}
-}
-const acitonCreators = {add,reduce,addAsync}
 
-App = connect(mapStatetoProps,acitonCreators)(App)
 export default App
