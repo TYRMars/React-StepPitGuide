@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Link, Redirect, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux'
 import {counter} from './index.redux'
 import App from './App'
+import Auth from './Auth.js'
+import Dashboard from './Dashboard.js'
 
 const store = createStore(counter, compose(
     applyMiddleware(thunk),
@@ -13,43 +15,14 @@ const store = createStore(counter, compose(
     }
 ));
 
-function Second() {
-    return <h2>Second</h2>
-}
-
-function Third() {
-    return <h2>Third</h2>
-}
-
-function Fourth() {
-    return <h2>Fourth</h2>
-}
-
-class Test extends React.Component {
-  render(){
-    console.log(this.props);
-    return (
-      <h1>test测试组件{this.props.params.location}</h1>
-    );
-  }
-}
-
 ReactDom.render(
     (<Provider store={store}>
         <BrowserRouter>
-            <div>
-                <ul>
-                    <li><Link to='/'>First</Link></li>
-                    <li><Link to='/Second'>Second</Link></li>
-                    <li><Link to='/Third'>Third</Link></li>
-                    <li><Link to='/Fourth'>Fourth</Link></li>
-                </ul>
-                <Route path='/' exact component={App}/>
-                <Route path='/:location' component={Test}/>
-                <Route path='/Second' component={Second}/>
-                <Route path='/Third' component={Third}/>
-                <Route path='/Fourth' component={Fourth}/>
-            </div>
+            <Switch>
+                <Route path='/login' component={Auth}/>
+                <Route path='/dashboard' component={Dashboard}/>
+                <Redirect to='/dashboard'></Redirect>
+            </Switch>
         </BrowserRouter>
     </Provider>),
     document.getElementById('root')
