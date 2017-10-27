@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button,List} from 'antd-mobile';
+import {Tab,TabPane} from 'antd-mobile';
 
 class App extends React.Component {
   render(){

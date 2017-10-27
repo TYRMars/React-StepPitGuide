@@ -28,7 +28,9 @@ function Fourth() {
 class Test extends React.Component {
   render(){
     console.log(this.props);
-    <h1>test测试组件👣</h1>
+    return (
+      <h1>test测试组件{this.props.params.location}</h1>
+    );
   }
 }
 
@@ -37,13 +39,13 @@ ReactDom.render(
         <BrowserRouter>
             <div>
                 <ul>
-                    <li><Link to='/App'>First</Link></li>
+                    <li><Link to='/'>First</Link></li>
                     <li><Link to='/Second'>Second</Link></li>
                     <li><Link to='/Third'>Third</Link></li>
                     <li><Link to='/Fourth'>Fourth</Link></li>
                 </ul>
-                <Route path='/App' component={App}/>
-                <Route path='/:location' component={test}/>
+                <Route path='/' exact component={App}/>
+                <Route path='/:location' component={Test}/>
                 <Route path='/Second' component={Second}/>
                 <Route path='/Third' component={Third}/>
                 <Route path='/Fourth' component={Fourth}/>
