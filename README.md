@@ -18,6 +18,7 @@ React进阶学习（包含Redux和Router4）
 ### 第二章 React-router4
 * [02-01](https://github.com/TYRMars/ReactLearn-Advanced#02-01)`React-router4基础介绍`
 * [02-02](https://github.com/TYRMars/ReactLearn-Advanced#02-02)`React-router4其他组件`
+* [02-03](https://github.com/TYRMars/ReactLearn-Advanced#02-03)`React-router4结合React-redux`
 
 
 # 01-01
@@ -701,4 +702,92 @@ ReactDom.render(
     </Provider>),
     document.getElementById('root')
 );
+```
+
+# 02-03
+## React-router4结合React-redux
+
+* 复杂redux应用，多个reducer，用combineReducers合并
+* Redirect组件跳转
+* Switch只渲染一个子组件
+
+#### 结构
+
+* index.js
+
+```JavaScript
+import React from 'react'
+import ReactDom from 'react-dom'
+import thunk from 'redux-thunk'
+import {BrowserRouter, Route , Redirect, Switch} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import {createStore, applyMiddleware, compose} from 'redux'
+import reducers from './reducer'
+import Auth from './Auth.js'
+import Dashboard from './Dashboard.js'
+
+const store = createStore(reducers, compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : () => {
+    }
+));
+
+console.log(store.getState());
+
+ReactDom.render(
+    (<Provider store={store}>
+        <BrowserRouter>
+            <Switch>
+                <Route path='/login' component={Auth}/>
+                <Route path='/dashboard' component={Dashboard}/>
+                <Redirect to='/dashboard'></Redirect>
+            </Switch>
+        </BrowserRouter>
+    </Provider>),
+    document.getElementById('root')
+);
+```
+
+* Auth.js
+
+```JavaScript
+
+```
+
+* Auth.redux.js
+
+```JavaScript
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+export function auth(state={ isAuth:false , user:'root'},action) {
+    switch(action.type){
+        case LOGIN:
+            return{...state, isAuth:true};
+        case LOGOUT:
+            return{...state, isAuth:false};
+        default:
+            return state
+    }
+}
+
+//action
+
+export function login() {
+    return {type:LOGIN}
+}
+export function logout() {
+    return {type:LOGOUT}
+}
+```
+
+* reducer.js
+
+```JavaScript
+//合并reducer 并返回
+import { combineReducers } from 'redux'
+import { counter } from "./index.redux";
+import { auth } from "./Auth.redux";
+
+export default combineReducers({ counter , auth })
 ```

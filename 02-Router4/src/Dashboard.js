@@ -1,20 +1,27 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import App from "./App";
 
 function News() {
-    return <h2>News</h2>
+    return (
+        <div>
+            <h2>News</h2>
+        </div>
+    )
 }
 
 function Video() {
-    return <h2>Video</h2>
+    return (
+        <div>
+            <h2>Video</h2>
+        </div>
+    )
 }
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props)
     }
-
     render() {
         return (
             <div>
