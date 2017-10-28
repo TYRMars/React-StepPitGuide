@@ -4,7 +4,7 @@ import {add, minus, addAsync} from './index.redux'
 
 
 // App = connect(mapStatetoProps,acitonCreators)(App)
-@connect(state => ({num:state}),{add, minus, addAsync})
+@connect(state => ({num:state.counter}),{add, minus, addAsync})
 
 class App extends React.Component {
     // constructor() {
