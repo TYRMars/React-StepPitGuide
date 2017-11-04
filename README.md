@@ -23,9 +23,14 @@ React进阶学习（包含Redux和Router4）
 * [01-06](https://github.com/TYRMars/ReactLearn-Advanced#01-06)`React-Redux`
 
 ### 第二章 React-router4
+
 * [02-01](https://github.com/TYRMars/ReactLearn-Advanced#02-01)`React-router4基础介绍`
 * [02-02](https://github.com/TYRMars/ReactLearn-Advanced#02-02)`React-router4其他组件`
 * [02-03](https://github.com/TYRMars/ReactLearn-Advanced#02-03)`React-router4结合React-redux`
+
+### 第三章 asios
+
+* [03-01](https://github.com/TYRMars/ReactLearn-Advanced#03-01)`axios异步请求`
 
 
 # 01-01
@@ -477,7 +482,7 @@ export default App
 * React官方的路由库
 * React开发单页应用，路由即组件
 * 核心概念：动态路由、Route、Link、Switch
-* 安装：`npm intstall react-router-dom --save`
+* 安装：`npm install react-router-dom --save`
 * `react-router-dom`浏览器端的路由
 
 #### 入门组件
@@ -999,3 +1004,14 @@ export default Dashboard
         return this.props.isAuth ? app: redirectToLogin
     }
 ```
+
+# 03-01
+## axios发送异步请求
+
+* 端口不一致，配置proxy配置转发
+* axios拦截器，统一loading处理
+* redux里使用异步数据，渲染页面📃
+
+## axios
+
+* `npm install axios --save`
