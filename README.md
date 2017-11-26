@@ -439,7 +439,7 @@ export default App
 * Connect可以用装饰器的方式来书写
   - `npm run eject`弹出个性化配置
   - `npm install babel-plugin-transform-decorators-legacy`
-  - `Package.json`里babel加上`plugins`配置
+  - `Package.json`里`babel`加上`plugins`配置`transform-decorators-legacy`
 
 ```JavaScript
 import React from 'react'
