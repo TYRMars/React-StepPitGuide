@@ -3,8 +3,9 @@
 * [主页](README.md)
 * [目录](INDEX.md)
 * [React 环境配置](More/TOOLS.md)
-  * [WebPack](More/WebPack.md)
-  * [Babel](More/BABEL_USE.md)
+  * [WebPack 前端打包工具](More/WebPack.md)
+  * [Babel 编译器](More/BABEL_USE.md)
+  * [Node 环境配置](More/NODE_EVN.md)
 * [React 基础知识](React-01/README.md)
   * [React 版本](React-01/react-ban-ben.md)
   * [React JSX](React-01/REACT_JSX.md)
@@ -31,5 +32,5 @@
   * [React-Router3](Router-01/react-router3.md)
   * [React-router4](Router-01/ROUTER4.md)
     * [React-router4 结合React-redux](Router-01/REDUX_ROUTER4.md)
-* [扩展](More/README.md)
+* [React 扩展知识](More/README.md)
 
