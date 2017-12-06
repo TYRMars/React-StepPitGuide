@@ -20,6 +20,7 @@
   * [React 独立组件间共享 Mixins](React-02/REACT_MINXI.md)
   * [React HOC高阶组件](React-02/REACT_HOC.md)
   * [React 事件与数据的双向绑定](React-02/REACT_SHIJIAN_TWO.md)
+* [Flux](Flux/README.md)
 * [Redux](Redux-01/README.md)
   * [Redux使用](Redux-01/REDUX_USE.md)
   * [Redux异步](Redux-01/REDUX_THUNK.md)
