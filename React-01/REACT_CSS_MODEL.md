@@ -1,4 +1,4 @@
-# CSS模块化
+# React CSS模块化
 
 * `"babel-plugin-react-html-attrs": "^2.0.0"`让JSX中`className`能变回原来`class`
 
@@ -6,6 +6,7 @@
 
 
 ```JavaScript
+
 // webpack.config.js
 var webpack = require("webpack");
 var path = require("path");
@@ -63,7 +64,9 @@ module.exports = {
   font-size: 15px;
 }
 ```
+
 * 在footer.js下写
+
 ```JavaScript
 import React from 'react';
 
