@@ -1,4 +1,4 @@
-# State属性
+# React State属性
 
 #### state状态
 
@@ -47,6 +47,7 @@ selectedGoods:[1,2,3]
 ---
 
 #### state 使用事例
+
 ```JavaScript
 import React from 'react';
 export default class BodyIndex extends React.Component {
@@ -72,4 +73,8 @@ export default class BodyIndex extends React.Component {
   }
 }
 ```
+
 * 可以用Chorme React组件中查看到`state`只会在相应的模块中有值，不会影响到其他模块。它属于模块自身属性。
+
+
+

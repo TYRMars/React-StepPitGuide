@@ -1,4 +1,5 @@
-# 事件与数据的双向绑定
+# React 事件与数据的双向绑定
+
 * bodyIndex.js代码
 
 ```JavaScript
@@ -33,7 +34,6 @@ export default class BodyIndex extends React.Component {
     )
   }
 }
-
 ```
 
 * bodychild.js代码
@@ -57,3 +57,6 @@ export default class BodyChild extends React.Component{
 * `ES6`的语法注意
   * 函数绑定方法this ：`this.forceUpdateHander = this.forceUpdateHander.bind(this)`
   * 或者调用时绑定：`onClick={this.changeUserInfo.bind(this,50)}`
+
+
+
