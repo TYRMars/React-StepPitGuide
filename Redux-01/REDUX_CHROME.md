@@ -19,7 +19,8 @@ const store = createStore(counter,compose(
 ))
 
 function render() {
-  ReactDom.render(<App store={store} addAsync={addAsync} add={add} reduce={reduce} />,document.getElementById('root'));
+  ReactDom.render(<App store={store} addAsync={addAsync} add={add} reduce={reduce} />
+  ,document.getElementById('root'));
 }
 render();
 
@@ -27,12 +28,13 @@ store.subscribe(render)
 ```
 
 # 01-06
+
 ## React-Redux
 
 * 完全使用Redux会很麻烦，所以使用专门React-Redux来管理
-  - `npm install react-redux --save`
-  - 忘记`subscribe`，记住`reducer`，`action`和`dispath`即可
-  - `react-redux`提供`Provider`和`Connect`两个接口来链接🔗
+  * `npm install react-redux --save`
+  * 忘记`subscribe`，记住`reducer`，`action`和`dispath`即可
+  * `react-redux`提供`Provider`和`Connect`两个接口来链接🔗
 
 ### 使用React-Redux
 
@@ -96,9 +98,9 @@ export default App
 ```
 
 * Connect可以用装饰器的方式来书写
-  - `npm run eject`弹出个性化配置
-  - `npm install babel-plugin-transform-decorators-legacy`
-  - `Package.json`里`babel`加上`plugins`配置`transform-decorators-legacy`
+  * `npm run eject`弹出个性化配置
+  * `npm install babel-plugin-transform-decorators-legacy`
+  * `Package.json`里`babel`加上`plugins`配置`transform-decorators-legacy`
 
 ```JavaScript
 import React from 'react'
@@ -134,3 +136,6 @@ class App extends React.Component {
 
 export default App
 ```
+
+
+
