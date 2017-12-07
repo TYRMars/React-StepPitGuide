@@ -10,16 +10,50 @@
 所以Redux就是来帮助React来管理数据的，React现在只负责自己的View
 ```
 
-### Redux
-
-* `store`:📝记录了所有组件的状态(state)
+* `store`:📝记录了所有组件的状态\(state\)
 * `dispatch`:更改管理实体
 * `action`:要更改什么
 * `reducer`:这个🈯️指的是要改变的组件，它获取`state`和`action`，生成新的`state`
 
-## 脚手架常用
+## Action
 
-* `npm start`开启调试环境
-* `npm install redux --save `安装第三方库redux
-* `npm run eject`弹出配置菜单，可以自定义配置webpack
-* 扩展`package.json`里的script字段，扩展`npm run`命令
+action 内必须使用一个字符串类型的`type`字段来表示将要执行的动作。多数情况下，`type`会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。
+
+## Action创建函数
+
+**Action 创建函数**就是生成 action 的方法。
+
+```JavaScript
+// action creator
+
+export function add() {
+  return {type:ADD};
+};
+export function reduce() {
+  return {type:REDUCE};
+};
+```
+
+## Reducer合并
+
+通过一个combineReducers合并所有的reducers
+
+```js
+//合并所有reducer
+import { combineReducers } from 'redux'
+import { user } from './redux/user.redux'
+import { chatuser } from './redux/chatuser.redux'
+import { chat } from './redux/chat.redux'
+
+export default combineReducers({user,chatuser,chat})
+```
+
+在index中使用reducers来进行数据管理
+
+```js
+import reducers from './reducer'
+const store = createStore(reducers)
+```
+
+
+

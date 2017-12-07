@@ -25,9 +25,6 @@ store.subscribe(render)
 import React from 'react'
 import {add} from './index.redux'
 class App extends React.Component {
-  // constructor() {
-  //
-  // }
   render(){
     const store = this.props.store
     const num = store.getState()
@@ -46,10 +43,7 @@ export default App
 ##### `index.redux.js`
 
 ```JavaScript
-const ADD = 'add';
-const REDUCE = 'reduce';
-
-// reducer
+//aciton
 const ADD = 'add';
 const REDUCE = 'reduce';
 
@@ -124,3 +118,6 @@ class App extends React.Component {
 
 export default App
 ```
+
+
+
