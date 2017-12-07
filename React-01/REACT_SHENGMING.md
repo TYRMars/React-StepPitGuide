@@ -47,7 +47,7 @@ class MyCompoment extends React.Component{
 
 ---
 
-<p align="center"><img src="http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png" /></p>
+![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)
 
 * 探索`BodyIndex`的`componentWillMount`和`componentDidMount`生命周期
 
