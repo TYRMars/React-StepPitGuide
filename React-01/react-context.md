@@ -1,6 +1,6 @@
 # Context
 
-当在多层组件中
+当在多层组件中，如果传递层数过多
 
 ```js
 import React from 'react'
@@ -21,6 +21,18 @@ class Sidebar extends React.Component{
         <Navbar user={this.props.user}></Navbar>
       </div>
      )
+  }
+}
+
+class Page extends React.Component{
+  render(){
+    const user = 'TYRMars'
+    return(
+      <div>
+        <p>我是{user}</p>
+        <Sidebar
+      </div>
+    )
   }
 }
 ```
