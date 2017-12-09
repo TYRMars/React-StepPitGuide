@@ -20,11 +20,11 @@ Redux框架之下，React组件要完成以下的事情
 import React from 'react'
 import Counter from './component/counter'
 class CounterContainer extends React.Component{
-  //...addNum,removeNum
+  //...addNum,removeNum,value
   render(){
     return(
      <div>
-      <Counter addNum={addNum} removeNum={removeNum}/>
+      <Counter addNum={addNum} removeNum={removeNum} value={value}/>
      </div>
     )
   }
@@ -39,12 +39,12 @@ class CounterContainer extends React.Component{
 //展示组件
 import React from 'react'
 class Counter extends React.Component{
-  const {addNum,removeNum} = this.props
+  const {addNum,removeNum,value} = this.props
   render(){
     <div>
      <button onClick={addNum}>+</button>
      <button onClick={removeNum}>-</button>
-
+     <span>{value}</span>
     </div>
   }
 }
