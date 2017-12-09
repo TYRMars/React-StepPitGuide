@@ -47,5 +47,3 @@ BodyIndex.defaultProps = defaultProps;
 
 
 
-\`\`\`
-

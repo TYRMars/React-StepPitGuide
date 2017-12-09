@@ -1,6 +1,6 @@
-# Context
+# 组件Context
 
-当在多层组件中，如果传递层数过多
+当在多层组件中，如果传递层数过多，如以下实例：
 
 ```js
 import React from 'react'
@@ -37,5 +37,7 @@ class Page extends React.Component{
 }
 ```
 
-context是全局的，组件里声明，所有子元素都可以直接获取
+就会出现
+
+组件context是全局的，组件里声明，所有子元素都可以直接获取
 

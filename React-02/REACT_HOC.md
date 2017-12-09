@@ -18,7 +18,7 @@ hello = WrapperHello(hello)
 hello()
 ```
 
-  - 便捷写法
+* 便捷写法
 
 ```JavaScript
 @connect()
@@ -53,8 +53,9 @@ hello = WrapperHello(Hello)
 ```
 
 * HOC，给出的组件外面包装一层
-  - 属性代理
-  - 反向继承:渲染劫持
+
+  * 属性代理
+  * 反向继承:渲染劫持
 
 * 高阶组件反向继承
 
@@ -73,3 +74,6 @@ function WrapperHello(Comp) {
 
 @WrapperHello
 ```
+
+
+

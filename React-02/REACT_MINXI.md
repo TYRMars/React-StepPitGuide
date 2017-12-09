@@ -9,7 +9,7 @@ const MixinLog = {
     componentDidMount(){
     console.log("MixinLog componentDidMount");//查看Mixin生命周期
     }
-    ,log(){console.log("abcdefg")}
+    ,log(){console.log("tyrmars")}
 };
 
 export default MixinLog//向外输出
@@ -35,7 +35,7 @@ BodyIndex.defaultProps = defaultProps;
 ReactMixin(BodyIndex.propTypes,MixinLog);
 ```
 
-* 点击页面上的提交按钮🔘在`console.log`中会出现`MixinLog componentDidMount`和`abcdefg`
+* 点击页面上的提交按钮🔘在`console.log`中会出现`MixinLog componentDidMount`和`tyrmars`
 
 
 
