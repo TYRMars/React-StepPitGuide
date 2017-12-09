@@ -21,7 +21,7 @@
   * [React 独立组件间共享 Mixins](React-02/REACT_MINXI.md)
   * [React HOC高阶组件](React-02/REACT_HOC.md)
   * [React 事件与数据的双向绑定](React-02/REACT_SHIJIAN_TWO.md)
-  * [React 容器组件和傻瓜组件](React-01/react-rong-qi-zu-jian-he-sha-gua-zu-jian.md)
+  * [React 容器组件和UI组件](React-01/react-rong-qi-zu-jian-he-sha-gua-zu-jian.md)
   * [React 组件Context](React-01/react-context.md)
 * [Flux](Flux/README.md)
 * [Redux](Redux-01/README.md)
@@ -37,4 +37,5 @@
   * [React-router4](Router-01/ROUTER4.md)
     * [React-router4 结合React-redux](Router-01/REDUX_ROUTER4.md)
 * [React 扩展知识](More/README.md)
+* [React 问题思考](QUESTION.md)
 
