@@ -11,13 +11,45 @@ Redux框架之下，React组件要完成以下的事情
 
 所以为了让React对于处理数据和显示界面能更加专注。我们可以把其组件进行拆分，让一部分专注于处理数据，让另一部分专注于显示界面。这样在通过嵌套调用。完成之前一个组件的任务。
 
-#### 第一种组件【容器组件】
+#### 第一种组件【容器组件\(Container Component\)】
 
 它要专注于处理数据，负责和Redux Store进行交流，用来做状态处理，它是动态的。处于组件嵌套的外层，所以叫做容器组件
 
-#### 第二种组件【展示组件】
+```js
+//容器组件
+import React from 'react'
+import Counter from './component/counter'
+class CounterContainer extends React.Component{
+  //...addNum,removeNum
+  render(){
+    return(
+     <div>
+      <Counter addNum={addNum} removeNum={removeNum}/>
+     </div>
+    )
+  }
+}
+```
+
+#### 第二种组件【展示组件\(Presentational Component\)】
 
 它主要专注于view，它本身是纯函数，通过接收父组件传递过来的props产生结果渲染页面，所以它是无状态的，。处于组件嵌套的内层，所以叫它展示组件
+
+```js
+//展示组件
+import React from 'react'
+class Counter extends React.Component{
+  const {addNum,removeNum} = this.props
+  render(){
+    <div>
+     <button onClick={addNum}>+</button>
+     <button onClick={removeNum}>-</button>
+
+    </div>
+  }
+}
+export default Counter
+```
 
 ---
 
