@@ -8,7 +8,7 @@
 
 #### 基本用法
 
-* `$ npm install -S react-router`安装`React-Router`，最新的为`React-Router4`。
+* `$ npm install  react-router`安装`React-Router`，最新的为`React-Router4`。
 
 ```JavaScript
 import React from 'react';
@@ -36,10 +36,10 @@ export default class Root extends React.Component{
 }
 
 ReactDOM.render(<Root/>, document.getElementById('example'));
-
 ```
+
 * 跳转时使用`<Link>`进行跳转
-#### 使用案例
+  #### 使用案例
 * 在`src/js`创建入口文件`root.js`
 * 在webpack中把
 
@@ -48,4 +48,7 @@ ReactDOM.render(<Root/>, document.getElementById('example'));
 * 从`Header`中跳转到`list`传递数值。
 * 利用在`root.js`中设置`<Route component={ComponentList} path="list"></Route>`中`path="list/id:"`。这个为定义的方法
 * 在`list`中用`{this.props.params.id}`获取从`Header`路由传递过来的值
-* `Header`中使用`<Link to={``/list/12341234``}>`
+* `Header`中使用```<Link to={``/list/12341234``}>```
+
+
+
