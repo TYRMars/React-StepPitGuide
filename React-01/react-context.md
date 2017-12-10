@@ -5,6 +5,7 @@
 ```js
 import React from 'react'
 
+//3
 class Navbar extends React.Component{
   render(){
     return(
@@ -13,6 +14,7 @@ class Navbar extends React.Component{
   }
 }
 
+//2
 class Sidebar extends React.Component{
   render(){
      return(
@@ -24,13 +26,14 @@ class Sidebar extends React.Component{
   }
 }
 
+//1
 class Page extends React.Component{
   render(){
     const user = 'TYRMars'
     return(
       <div>
         <p>我是{user}</p>
-        <Sidebar
+        <Sidebar user={this.props.user}/>
       </div>
     )
   }

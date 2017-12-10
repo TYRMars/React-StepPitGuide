@@ -51,7 +51,27 @@ class Counter extends React.Component{
 export default Counter
 ```
 
----
+对于无状态组件还可以进行进一步优化。基于它是一种纯函数思想，传入参数返回处理后的数据。所以可以进行如下改写
+
+```js
+//展示组件改进
+function Counter(props){
+  const {addNum,removeNum,value} = props;
+  return({
+   <div>
+     <button onClick={addNum}>+</button>
+     <button onClick={removeNum}>-</button>
+     <span>{value}</span>
+   </div>
+  })
+}
+//另一种写法，写成解构赋值
+function Counter({addNum,removeNum,value}){
+  //直接使用addNum,removeNum,value这些变量
+}
+```
+
+
 
 所以对于`容器组件`也有人称为它为`智能组件`，对于展示`组件`也有人称它为`傻瓜组件`
 
