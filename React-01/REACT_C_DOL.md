@@ -34,7 +34,8 @@ export default class BodyIndex extends React.Component {
     <p>接收到的父页面属性：userid: {this.props.userid} username: {this.props.username}</p>
     <p>age: {this.state.age}</p>
     <input type="button" value="提交" onClick={this.changeUserInfo.bind(this,99)}/>
-    <BodyChild {...this.props} id={4} handleChildValueChange={this.handleChildValueChange.bind(this)}/>{/*传参数到孙子节点*/}
+    <BodyChild {...this.props} id={4} handleChildValueChange={this.handleChildValueChange.bind(this)}/>
+    {/*传参数到孙子节点*/}
     </div>
     )
   }

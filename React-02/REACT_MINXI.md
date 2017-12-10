@@ -1,4 +1,6 @@
-# React 独立组件间共享 Mixins
+# React ~~独立组件间共享 Mixins~~
+
+不提倡使用，提倡使用HOC高阶组件
 
 * ES6不支持Mixin，所以需要相插件来进行支持，`npm install --save react-mixin@2`
 * 测试一下Mixin是如何运行的
@@ -36,8 +38,6 @@ ReactMixin(BodyIndex.propTypes,MixinLog);
 ```
 
 * 点击页面上的提交按钮🔘在`console.log`中会出现`MixinLog componentDidMount`和`tyrmars`
-
-
 
 
 

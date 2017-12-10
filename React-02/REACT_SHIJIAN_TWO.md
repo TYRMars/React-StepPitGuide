@@ -2,7 +2,7 @@
 
 * bodyIndex.js代码
 
-```JavaScript
+```js
 import React from 'react';
 import BodyChild from './bodychild'
 export default class BodyIndex extends React.Component {
@@ -38,7 +38,7 @@ export default class BodyIndex extends React.Component {
 
 * bodychild.js代码
 
-```JavaScript
+```js
 import React from 'react';
 export default class BodyChild extends React.Component{
 
