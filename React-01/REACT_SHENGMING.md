@@ -48,11 +48,15 @@ class MyCompoment extends React.Component{
 
 ---
 
-![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)
+#### ES5生命周期
+
+#### ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)ES6生命周期（NEW）
+
+#### ![](https://camo.githubusercontent.com/2d82a2e67c415a05b33005d0f500c679d34b2639/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313831343335342d346266363265353435353361333262372e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 * 探索`BodyIndex`的`componentWillMount`和`componentDidMount`生命周期
 
-```JavaScript
+```js
 import React from 'react';
 export default class BodyIndex extends React.Component{
   componentWillMount(){
@@ -75,7 +79,7 @@ export default class BodyIndex extends React.Component{
 * 在浏览器的开发者工具中就可以看到`console`
 * 再来查看Index的的`componentWillMount`和`componentDidMount`生命周期，`BodyIndex`包含在`Index`中
 
-```JavaScript
+```js
 var React = require('react');
 var ReactDOM = require('react-dom');
 import CompomentHeader from './components/header';
@@ -104,7 +108,83 @@ class Index extends React.Component {
 ReactDOM.render( <Index /> , document.getElementById('example'));
 ```
 
+#### 所有生命周期尝试
 
+```js
+import React from 'react';
+import {Button,List} from 'antd-mobile';
+
+class App extends React.Component {
+  render(){
+    const boss = 'JavaScript';
+    return (
+      <div>
+        <h1>React is {boss}</h1>
+        <First use='React'/>
+      </div>
+    )
+  }
+}
+
+class First extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      things:['C++','PHP','Python']
+    }
+  }
+  componentWillMount(){
+    console.log('组件马上开始加载');
+  }
+  componentDidMount(){
+    console.log('组件加载完毕');
+  }
+  componentWillReceiveProps(){
+    console.log('组件要接受父组件的值');
+  }
+  shouldComponentUpdate(){
+    console.log('判断是不是要更新组件');
+    return true;
+  }
+  componentWillUpdate(){
+    console.log('马上要更新组件了');
+  }
+  componentDidUpdate(){
+    console.log("组件更新完毕");
+  }
+  componentWillUnmount(){
+    console.log('组件卸载');
+  }
+  addthings(){
+    console.log('hello world');
+    this.setState({
+      things:[...this.state.things,'love'+ Math.random()]
+    })
+  }
+  render(){
+    console.log('组件加载');
+    return (
+      <div>
+        <h2>Component is {this.props.use}</h2>
+        <Button type='primary' onClick={()=>this.addthings()}>hello</Button>
+        <Rd list = 'Router'/>
+        <List renderHeader={()=>'语言列表'}>{this.state.things.map(v=><List.Item key={v}>{v}</List.Item>)}</List>
+      </div>
+    );
+  }
+}
+
+function Rd(props) {
+  return (
+    <div>
+      <h3>Redux and {props.list}</h3>
+    </div>
+  );
+}
+
+export default App;
+
+```
 
 
 

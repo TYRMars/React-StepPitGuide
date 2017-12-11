@@ -1,6 +1,6 @@
 # Summary
 
-* [主页](README.md)
+* [封面](README.md)
 * [前言](INDEX.md)
 * [React- 环境配置](More/TOOLS.md)
   * [WebPack 前端打包工具](More/WebPack.md)
