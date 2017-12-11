@@ -18,7 +18,7 @@
   * [React CSS內联式样](React-01/REACT_STYLE.md)
   * [React CSS模块化](React-01/REACT_CSS_MODEL.md)
   * [React 虚拟DOM概念](React-01/react-xu-ni-dom-gai-nian.md)
-  * [React 多组件嵌套](React-01/react-duo-zu-jian-qian-tao.md)
+  * [React 虚拟DOM思考](React-01/react-xu-ni-dom-si-kao.md)
 * [React 进阶知识](React-02/README.md)
   * [React 可复用组件](React-01/REACT_C_DOL.md)
   * [React 事件与数据的双向绑定](React-02/REACT_SHIJIAN_TWO.md)
