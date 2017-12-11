@@ -43,7 +43,7 @@
 * [React 性能优化](React-06/README.md)
 * [React 服务端渲染](React-07/README.md)
 * [React 项目应用](React-08/README.md)
-  * React 文件组织方式
+  * [React 文件组织方式](React-08/react-wen-jian-zu-zhi-fang-shi.md)
   * [React 模块接口](React-08/react-mo-kuai-jie-kou.md)
   * [React 合并reducer](React-08/react-he-bing-reducer.md)
 
