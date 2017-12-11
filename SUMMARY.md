@@ -37,6 +37,7 @@
   * [React-Router3](Router-01/react-router3.md)
   * [React-router4](Router-01/ROUTER4.md)
     * [React-router4 结合React-Redux](Router-01/REDUX_ROUTER4.md)
+* [React 模块化](React-08/README.md)
 * [React 性能优化](React-06/README.md)
 * [React 服务端渲染](React-07/README.md)
 

@@ -16,6 +16,13 @@
 * highlight-line
 * highlight-selected
 
+## Create-React-App脚手架常用
+
+* `npm start`开启调试环境
+* `npm install redux --save`安装第三方库redux
+* `npm run eject`弹出配置菜单，可以自定义配置webpack
+* 扩展`package.json`里的script字段，扩展`npm run`命令
+
 # JSX样式与CSS的转换
 
 * CSSToReact工具🔧[Github](https://github.com/staxmanade/CssToReact)
@@ -25,13 +32,6 @@
 
 * Material-UI[Material-UI](http://www.material-ui.com)
 * 蚂蚁金服[ANT DESIGH](http://ant.design/index-cn)
-
-## Create-React-App脚手架常用
-
-* `npm start`开启调试环境
-* `npm install redux --save`安装第三方库redux
-* `npm run eject`弹出配置菜单，可以自定义配置webpack
-* 扩展`package.json`里的script字段，扩展`npm run`命令
 
 
 

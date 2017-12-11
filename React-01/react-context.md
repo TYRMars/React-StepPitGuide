@@ -89,11 +89,40 @@ import Provider from './Provider.js'
 
 ReactDOM.render(
  <Provider>
-   <ControlPanel/>
+   <Page/>
  </Provider>
  ,document.getElementById('root')
 );
 ```
 
-给它包一层Provider
+给ControlPanel包一层Provider，Provider提供了Context，也就是通过这种方式，让Context覆盖所有组件
+
+```js
+import React from 'react'
+
+Navbar.contextTypes = {
+ store:PropType.object
+}
+
+//3
+class Navbar extends React.Component{
+  render(){
+    return(
+      <div>{this.context.store.user}的导航栏</div>
+    )
+  }
+}
+```
+
+在最底层直接引入Context，相应的store就能通过this.context.store读取出来
+
+如果定义了构造函数就要把context以参数形式引入
+
+```js
+constructor(props,context){
+  super(props,context)
+}
+```
+
+
 
