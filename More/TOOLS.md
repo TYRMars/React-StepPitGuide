@@ -18,6 +18,8 @@
 
 ## Create-React-App脚手架常用
 
+这是一个React项目的基本构建的脚手架，很适合新手学习使用
+
 * `npm start`开启调试环境
 * `npm install redux --save`安装第三方库redux
 * `npm run eject`弹出配置菜单，可以自定义配置webpack

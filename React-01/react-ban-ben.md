@@ -14,12 +14,12 @@
 * 安装采用NPM的方法`npm install react`
 * 如果要安装在项目目录下`cd react／`下面，然后`npm install react --save`
 * 如果想在电脑全局进行安装则`npm install react  -g`
-* 会自动安装最新的版本，我用的是`React 15.5.4`
+* 会自动安装最新的版本
 
 # React Starter Pack 下载使用与React初体验
 
-* 新版的React没有演示文件，03-02是使用的`React 15.3.2`
-* 03-02中有一些举例
+* 新版的React没有演示文件，使用的`React 15.3.2`
+
 * 在examples／basic／下index.html是一个事例可以研究一下,这个地方体现了React在页面上的高性能的优点
 
 ```js
