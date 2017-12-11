@@ -44,7 +44,6 @@ setInterval(function() {
     document.getElementById('container')
   );
 }, 50);
-
 ```
 
 

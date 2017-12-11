@@ -1,4 +1,5 @@
 # React组件
+
 * 组件是`React`的基石，所有的`React`应用程序都是基于组件的。
 * 之前`React`组件，使用`React.createClass`来进行声明
 
@@ -69,7 +70,6 @@ class Index extends React.Component {
 
 // 入口
 ReactDOM.render( < Index / > , document.getElementById('example'));
-
 ```
 
 #### HTML标签与React组件
@@ -104,36 +104,7 @@ let headline = React.createElement(Headline);
 * `JSX`语法使用第一个字母大小写来区分是一个普通的`HTML`标签还是一个`React`组件
 * 注意：因为`JSX`本身是`JavaScript`语法，所以一些`JavaScript`中的保留字要用其他的方式书写，比如第一个例子中`class`要写成`className`
 
-# React多组件嵌套
 
-* `webpack-dev-server`环境运行起来,这里主要是明白了React如何做嵌套
-* `src/js/components`下创建`header.js`书写代码✍️
 
-```JavaScript
-import React from 'react';
-import ReactDOM from 'react-dom';
-export default class CompomentHeader extends React.Component{
-  render(){
-    return(
-      <header>
-      <h1>这里是表头</h1>
-      </header>
-    )
-  }
-}
-```
 
-* `src/js/components`下创建`footer.js`书写代码✍️
 
-```JavaScript
-import React from 'react';
-export default class CompomentFooter extends React.Component{
-  render(){
-    return(
-      <footer>
-      <h1>这里是尾部</h1>
-      </footer>
-    );
-  }
-}
-```

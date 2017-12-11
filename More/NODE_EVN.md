@@ -1,5 +1,7 @@
 # NodeJS简介
 
+![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513001497136&di=14517a52b5d34a4015325b77af8be688&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20140123%2F20140123090127_450.png)
+
 * [Node.js®](https://nodejs.org/en/)是一个基于Chrome V8 JavaScript引擎构建的JavaScript运行时。 Node.js使用事件驱动的非阻塞I / O模型，使其轻便且高效。 Node.js的包生态系统，npm，是世界上最大的开源生态系统。
 * NPM命令，NPMJS有强大的库，存放着各种必备的开源文件，日常所需的基本上都能通过它找到，并安装。——[NPM.JS](https://www.npmjs.com)
 
@@ -14,8 +16,8 @@
 # NPM配置国内源
 
 * 如果你不会翻墙，或者经常NPM装不上东西，可以试一下国内的NPM镜像
-* 这是一个完整 `npmjs.org` 镜像，你可以用此代替官方版本(只读)，同步频率目前为 `10分钟` 一次以保证尽量与官方服务同步。
-* 方法一,定制的 `cnpm` (gzip 压缩支持) 命令行工具代替默认的 `npm`
+* 这是一个完整 `npmjs.org` 镜像，你可以用此代替官方版本\(只读\)，同步频率目前为 `10分钟` 一次以保证尽量与官方服务同步。
+* 方法一,定制的 `cnpm` \(gzip 压缩支持\) 命令行工具代替默认的 `npm`
 * `$ npm install -g cnpm --registry=https://registry.npm.taobao.org`
 * 方法二,直接通过添加 `npm` 参数 `alias` 一个新命令:
 
@@ -34,7 +36,7 @@ $ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taoba
 
 * 使用第一种方法`taobaoNPM`使用的时候写成`$ cnpm install [name]`，就可以安装了！！！
 * 使用第二种方法`NPM`按照原来的方法`$ npm install [name]`就可以了！！！
-* 如果想了解更多点击->[cnpm](http://blog.parryqiu.com/2016/08/18/ionic_installation)
+* 如果想了解更多点击-&gt;[cnpm](http://blog.parryqiu.com/2016/08/18/ionic_installation)
 
 # 使用NPM配置React
 
@@ -70,8 +72,11 @@ $ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taoba
 
 * 在说热加载之前，先看一下我遇到过的问题，[React配置必踩坑](http://www.kejiganhuo.tech/?p=374)
 
---------------------------------------------------------------------------------
+---
 
 ![error01](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/error01-e1496323125786.png)
 
 * 需要注意的 ---- NPM安装的时候最好`$ sudo npm install babel-loader -–save`很多人无法后面webpack无法打包，就是因为没有安装babel加载器。
+
+
+
