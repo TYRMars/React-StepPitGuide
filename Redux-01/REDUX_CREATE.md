@@ -2,7 +2,7 @@
 
 #### 简版Redux基本实现
 
-* TYRMars-redux.js
+* tyrmars-redux.js
 
 ```js
 export function createStore(reducer) {
@@ -86,4 +86,50 @@ store.subscribe(render)
 ```
 
 简版的Redux，采用subscribe每次监听render
+
+---
+
+## 配合[自制React-Redux](/React-01/react-zi-zhi-react-redux.md) {#配合react-redux}
+
+```js
+export function createStore(reducer) {
+  let currentState = {}
+  let currentListeners = []
+
+  function getState() {
+    return currentState
+  }
+
+  function subscribe(listener) {
+    //传入函数
+    currentListeners.push(listener)
+  }
+
+  function dispatch(action){
+    currentState = reducer(currentState,action)
+    currentListeners.forEach(v=>v())
+    return action
+  }
+
+  //触发初始状态
+  dispatch({type:'@TYRMARS/Mars-Redux'})
+
+  return {getState,subscribe,dispatch}
+}
+
+function bindActionCreator(creator,dipatch){
+  return (...args) => dispatch(creator(...args))
+}
+
+export function bindActionCreators(creators,dispatch){
+  let bound = {}
+  Object.keys(creators).forEach(v=>{
+    let creator = creators[v]
+    bound[v] = bindActionCreator(creator,dipatch)
+  })
+  return bound
+｝
+```
+
+
 

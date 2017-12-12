@@ -2,7 +2,7 @@
 
 * 装饰器模式
 
-```JavaScript
+```js
 function hello() {
   console.log('hello YueYue');
 }
@@ -20,7 +20,7 @@ hello()
 
 * 便捷写法
 
-```JavaScript
+```js
 @connect()
 ```
 
@@ -28,7 +28,7 @@ hello()
 
 * 高阶组件属性代理
 
-```JavaScript
+```js
 class Hello extends React.component {
   render(){
     return(<h2>hello YueYue</h2>)
@@ -59,7 +59,7 @@ hello = WrapperHello(Hello)
 
 * 高阶组件反向继承
 
-```JavaScript
+```js
 function WrapperHello(Comp) {
   class WrapComp extends Comp {
     componentDidMount(){

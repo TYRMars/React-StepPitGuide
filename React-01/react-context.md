@@ -124,5 +124,62 @@ constructor(props,context){
 }
 ```
 
+---
+
+对实例进行修改
+
+```js
+import React from 'react'
+import PropTypes from 'prop-types'
+
+//3
+class Navbar extends React.Component{
+  static contextTypes = {
+    user:PropTypes.String
+  }
+  render(){
+    console.log(this.context)
+    return(
+      <div>{this.props.user}的导航栏</div>
+    )
+  }
+}
+
+//2
+class Sidebar extends React.Component{
+  render(){
+     return(
+      <div>
+        <p>侧边栏</p>
+        <Navbar></Navbar>
+      </div>
+     )
+  }
+}
+
+//1
+class Page extends React.Component{
+  //React16的proptypes校验方法
+  static childContextTypes = {
+    user:PropTypes.String
+  }
+  constructor(props){
+    super(props)
+    this.state = {user:'TYRMars'}
+  }
+  getChildContext(){
+    return this.state
+  }
+  render(){
+    return(
+      <div>
+        <p>我是{this.state.user}</p>
+        <Sidebar/>
+      </div>
+    )
+  }
+}
+```
+
 
 
