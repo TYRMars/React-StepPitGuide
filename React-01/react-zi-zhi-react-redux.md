@@ -50,7 +50,7 @@ class Provider extends React.Component{
 
 ## 自制React-Redux
 
-* `import {bindActionCreators} from './tyrmars-redux.js'` 查看[自制Redux](/配合react-redux)
+* `import {bindActionCreators} from './tyrmars-redux.js'` 查看[自制Redux](#自制react-redux)
 
 ```js
 import React from 'react'

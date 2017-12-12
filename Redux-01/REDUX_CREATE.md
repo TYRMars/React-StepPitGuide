@@ -89,7 +89,7 @@ store.subscribe(render)
 
 ---
 
-## 配合[自制React-Redux](/React-01/react-zi-zhi-react-redux.md) {#配合react-redux}
+## 配合[自制React-Redux](/React-01/react-zi-zhi-react-redux.md) {#自制react-redux}
 
 ```js
 export function createStore(reducer) {
