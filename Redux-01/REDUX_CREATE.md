@@ -6,8 +6,8 @@
 
 ```js
 export function createStore(reducer) {
-  let currentState = {}
-  let currentListeners = []
+  let currentState = {}//状态树
+  let currentListeners = []//state改变后监听
 
   function getState() {
     return currentState
@@ -15,7 +15,7 @@ export function createStore(reducer) {
 
   function subscribe(listener) {
     //传入函数
-    currentListeners.push(listener)
+    currentListeners.push(listener)//放入一个监听器
   }
 
   function dispatch(action){
@@ -128,7 +128,18 @@ export function bindActionCreators(creators,dispatch){
     bound[v] = bindActionCreator(creator,dipatch)
   })
   return bound
-｝
+}
+```
+
+* 对于`bindActionCreators`的改进
+
+```js
+export function bindActionCreators(creators,dispatch){
+  return Object.keys(creators).reduce((ret,item)=>{
+    ret[item] = bindActionCreator(creators[item],dispatch)
+    return ret
+  },{})
+}
 ```
 
 

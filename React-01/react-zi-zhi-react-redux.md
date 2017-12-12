@@ -21,6 +21,8 @@ App = connect(state=>({num:state}),{add,remove})(App)
 
 ##### 高阶组件写法connect
 
+* 实现其中的`mapStateToProps,mapDispatchToProps`参数
+
 ```js
 //传统写法
 export function connect(mapStateToProps,mapDispatchToProps){
