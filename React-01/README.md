@@ -1,4 +1,4 @@
-# React基础知识
+# ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/bg2015033101.png)
 
-![](http://p0.so.qhmsg.com/bdr/_240_/t01f6b1e8aa24b72b0f.png)
+
 
