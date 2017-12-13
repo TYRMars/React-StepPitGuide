@@ -4,24 +4,42 @@
 
 ```js
 /**
- * 使用样例：
- * <Folder id="17">
- *  {(files) => !files
- *    ? <Loading />
- *    : <FileList files={files} />}
- * </Folder>
- */
- 
+ * 使用样例：
+ * <Folder id="17">
+ *  {(files) => !files
+ *    ? <Loading />
+ *    : <FileList files={files} />}
+ * </Folder>
+ */
+
 import React, { Component, PropTypes } from 'react'
- 
+
 // fetchChildFilesByFolderId 接受一个文件夹 ID 的参数，
 // 返回 Promise<Array>，即文件列表。
 import fetchChildFilesByFolderId from '@shimo/api'
- 
+
 class Folder extends Component {
-  // 补全这里的代码
+  constructor(props){
+    super(props)
+    this.state = {
+      files:''
+    }
+  }
+  componentDidMount(){
+    fetchChildFilesByFolderId(this.props.id)
+    .then(v => this.setState({files:v}))
+  }
+  render(){
+    const children = this.props.children(this.state.files)
+    return(
+      <div>{children}</div>
+    );
+  }
 }
 
+Folder.propType = {
+  children: React.PropTypes.element.isRequired
+}
 ```
 
 
