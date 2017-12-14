@@ -30,9 +30,9 @@ class Folder extends Component {
     .then(v => this.setState({files:v}))
   }
   render(){
-    this.props.children(this.state.files)
+    const child = this.props.children(this.state.files)
     return(
-      null
+      <div>{child}</div>
     );
   }
 }
