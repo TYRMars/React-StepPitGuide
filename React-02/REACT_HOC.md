@@ -18,23 +18,11 @@ hello = WrapperHello(hello)
 hello()
 ```
 
-* 便捷写法
-
-```js
-@hello()
-```
-
 ### React使用
 
 * 高阶组件属性代理
 
 ```js
-class Hello extends React.component {
-  render(){
-    return(<h2>hello YueYue</h2>)
-  }
-}
-
 function WrapperHello(Comp) {
   class WrapComp extends React.Component{
     render(){
@@ -49,6 +37,12 @@ function WrapperHello(Comp) {
   return WrapComp
 }
 
+class Hello extends React.component {
+  render(){
+    return(<h2>hello YueYue</h2>)
+  }
+}
+
 hello = WrapperHello(Hello)
 ```
 
@@ -59,8 +53,10 @@ hello = WrapperHello(Hello)
 
 * 高阶组件反向继承
 
+##### HOC组件hoc.js
+
 ```js
-function WrapperHello(Comp) {
+export function WrapperHello(Comp) {
   class WrapComp extends Comp {
     componentDidMount(){
       console.log('高阶组件新增的生命周期，加载完成');
@@ -71,8 +67,25 @@ function WrapperHello(Comp) {
   }
   return WrapComp
 }
+```
 
+##### 被HOC包裹的组件
+
+```js
+//正常写法
+class Hello extends React.component {
+  render(){
+    return(<h2>hello YueYue</h2>)
+  }
+}
+Hello = WrapperHello(Hello)
+//简写
 @WrapperHello
+class Hello extends React.component {
+  render(){
+    return(<h2>hello YueYue</h2>)
+  }
+}
 ```
 
 

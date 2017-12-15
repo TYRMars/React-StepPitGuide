@@ -37,7 +37,7 @@ class Folder extends Component {
   }
 }
 
-Folder.propType = {
+Folder.propTypes = {
   children: React.PropTypes.element.isRequired
 }
 ```
