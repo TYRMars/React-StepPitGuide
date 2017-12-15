@@ -21,7 +21,7 @@ hello()
 * 便捷写法
 
 ```js
-@connect()
+@hello()
 ```
 
 ### React使用

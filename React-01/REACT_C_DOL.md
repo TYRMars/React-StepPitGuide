@@ -1,4 +1,4 @@
-# 可复用组件
+# React 可复用组件
 
 * 类定义完后，追加属性`propTypes`传入参数`userid:React.PropTypes.number`，规定userid是一个数字型，如果传入字符型和其他的非数字型，都会报错。
 * 给页面传入默认值 `const defaultProps ={username:'这是一个默认的用户名'//默认属性设置};`，把定义的`prop`传入 `BodyIndex.defaultProps = defaultProps;`。

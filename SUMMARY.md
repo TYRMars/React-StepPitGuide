@@ -10,6 +10,7 @@
   * [React 版本](React-01/react-ban-ben.md)
   * [React JSX](React-01/REACT_JSX.md)
   * [React 组件](React-01/REACT_COMPONENT.md)
+  * [React 组件Child](React-01/react-zu-jian-zi-dai.md)
   * [React 多组件嵌套](React-01/react-duo-zu-jian-qian-tao.md)
   * [React 组件生命周期](React-01/REACT_SHENGMING.md)
   * [React State属性](React-01/REACT_STATE.md)
