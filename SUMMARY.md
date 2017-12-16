@@ -36,6 +36,7 @@
   * [Flux](Redux-01/Flux/README.md)
   * [Redux 使用](Redux-01/REDUX_USE.md)
   * [Redux 异步](Redux-01/REDUX_THUNK.md)
+  * [Redux applyMiddleware](Redux-01/Flux/redux-applymiddleware.md)
   * [Redux Chrome插件使用](Redux-01/REDUX_CHROME.md)
   * [Redux 结合React](Redux-01/REDUX_AND_REACT.md)
   * [Redux 自制Redux](Redux-01/REDUX_CREATE.md)
@@ -50,4 +51,5 @@
   * [React 模块接口](React-08/react-mo-kuai-jie-kou.md)
   * [React 合并reducer](React-08/react-he-bing-reducer.md)
   * [React 问题](React-08/react-wen-ti.md)
+* [React 单元测试](React-Test/README.md)
 

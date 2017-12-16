@@ -1,16 +1,16 @@
 # Redux异步
 
 * 处理异步、调试工具🔧、更优雅的和react结合
-  - `Redux`处理异步，需要`redux-thunk`组件(比较简单的)
-  - `npm install redux-devtools-extention`并开启🔛(调试工具🔧)
-  - 使用`react-redux`优雅的链接🔗`react`和`redux`
+  * `Redux`处理异步，需要`redux-thunk`组件\(比较简单的\)
+  * `npm install redux-devtools-extention`并开启🔛\(调试工具🔧\)
+  * 使用`react-redux`优雅的链接🔗`react`和`redux`
 
 ### 处理异步
 
 * Redux默认只处理同步，异步任务需要`react-thunk`中间件
-  - `npm install redux-thunk --save`
-  - 使用`applyMiddleware`开启thunk中间件
-  - `Action`可以返回函数，使用`dispatch`提交`action`
+  * `npm install redux-thunk --save`
+  * 使用`applyMiddleware`开启thunk中间件
+  * `Action`可以返回函数，使用`dispatch`提交`action`
 
 ```JavaScript
 //创建一个异步动作
@@ -111,3 +111,6 @@ class App extends React.Component {
 
 export default App
 ```
+
+
+

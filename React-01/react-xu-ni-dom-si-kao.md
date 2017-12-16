@@ -1,4 +1,6 @@
-## React 虚拟DOM+components+生命周期的联系
+## React 虚拟DOM思考
+
+## 虚拟DOM+components+生命周期的联系
 
 ### React-虚拟DOM分析
 
