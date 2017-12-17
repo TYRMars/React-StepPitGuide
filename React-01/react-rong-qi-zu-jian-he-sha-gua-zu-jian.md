@@ -71,8 +71,6 @@ function Counter({addNum,removeNum,value}){
 }
 ```
 
-
-
 所以对于`容器组件`也有人称为它为`智能组件`，对于展示`组件`也有人称它为`傻瓜组件`
 
 ---
