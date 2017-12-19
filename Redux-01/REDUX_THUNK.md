@@ -1,5 +1,7 @@
 # Redux异步
 
+![](/assets/20160206132838_567.png)
+
 * 处理异步、调试工具🔧、更优雅的和react结合
   * `Redux`处理异步，需要`redux-thunk`组件\(比较简单的\)
   * `npm install redux-devtools-extention`并开启🔛\(调试工具🔧\)
@@ -111,6 +113,8 @@ class App extends React.Component {
 
 export default App
 ```
+
+---
 
 
 

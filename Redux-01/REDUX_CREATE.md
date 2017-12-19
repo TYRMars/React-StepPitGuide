@@ -2,6 +2,8 @@
 
 #### 简版Redux基本实现
 
+![](/assets/20160206132837_580.png)
+
 * tyrmars-redux.js
 
 ```js
@@ -146,6 +148,8 @@ export function bindActionCreators(creators,dispatch){
 
 ## applyMiddleware中间件实现
 
+![](/assets/20160206132838_571.png)
+
 通过之前对于applyMiddleware中间件的理解，在此我将要实现Redux中间件
 
 ##### 实现传入一个函数
@@ -168,12 +172,6 @@ export function applyMiddleWare(middleware){
    }
 }
 ```
-
-
-
-
-
-
 
 
 
