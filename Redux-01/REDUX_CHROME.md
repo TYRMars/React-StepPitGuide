@@ -15,7 +15,6 @@ import App from './App'
 const store = createStore(counter,compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension():()=>{}
-
 ))
 
 function render() {
