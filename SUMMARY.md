@@ -40,6 +40,7 @@
   * [Redux Chrome插件使用](Redux-01/REDUX_CHROME.md)
   * [Redux 结合React](Redux-01/REDUX_AND_REACT.md)
   * [Redux 自制Redux](Redux-01/REDUX_CREATE.md)
+  * [React 自制thunk中间件](Redux-01/Flux/react-zi-zhi-thunk-zhong-jian-jian.md)
 * [React React-Router](Router-01/README.md)
   * [React-Router2](Router-01/REACT_ROUTER2.md)
   * [React-router4](Router-01/ROUTER4.md)
