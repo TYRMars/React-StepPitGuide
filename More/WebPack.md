@@ -1,4 +1,5 @@
-# WebPack 热加载配置(上)
+# WebPack 热加载配置\(上\)
+
 * 创建index.html
 
 ```html
@@ -24,7 +25,7 @@ ReactDOM.render(
 
 ---
 
-# WebPack 热加载配置(中)
+# WebPack 热加载配置\(中\)
 
 * 采用`WebPack2`进行打包
 * `WebPack2`安装`sudo npm install -g webpack`
@@ -68,19 +69,23 @@ module.exports = {
         }]
     },
 };
-
 ```
 
 #### 接下来运行WebPack打包
+
 * 在Mac终端中，项目的根目录下，`webpack`进行打包，成功打包后会在src目录下生成bundle.js，在浏览器中查看
 * 原本页面上的`123`覆盖成了`hello world ！！`
 
 ---
 
+# WebPack 热加载配置\(下\)
 
-# WebPack 热加载配置(下)
 #### webpack-dev-server的使用
+
 * 不用每次都去用`WebPack`一遍
 * `webpack -watch`自动监听编译，但是需要手动刷新浏览器
 * 如果采用在Mac终端中项目根目录下`webpack-dev-server`这样可以`浏览器中`自动刷新，一边写代码，保存后自动刷新。
 * （我发现在webpack2中`http://localhost:8080/`也可以自动加载不用`-hot`，不知道是不是自己的原因，有错误，请指出！！！）
+
+
+
