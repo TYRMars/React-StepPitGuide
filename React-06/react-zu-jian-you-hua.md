@@ -73,5 +73,43 @@ class App extends React.Component{
 export default App;
 ```
 
+#### 组件数据传递
+
+```js
+import React from 'react'
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      num:1,
+      title:'imooc'
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick(){
+    this.setState({
+      num:this.state.num+1
+    })
+  }
+  render() {
+    return (
+      <div>
+       <h2>I am App</h2>
+       <Demo title={this.state.title}></Demo>
+      </div>
+    )
+  }
+}
+
+class Demo extends React.Component {
+  render() {
+    return (<h2>I am Demo</h2>)
+  }
+}
+
+export default App
+```
+
 
 

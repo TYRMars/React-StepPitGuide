@@ -47,8 +47,9 @@
     * [React-router4 结合React-Redux](Router-01/REDUX_ROUTER4.md)
 * [React 性能优化](React-06/README.md)
   * [React 组件优化](React-06/react-zu-jian-you-hua.md)
-  * Redux性能优化
-  * React同构
+    * [定制shouldComponentUpdate](React-06/react-zu-jian-you-hua/ding-zhi-shouldcomponentupdate.md)
+  * [Redux性能优化](React-06/reduxxing-neng-you-hua.md)
+  * [React同构](React-06/reacttong-gou.md)
 * [React 服务端渲染](React-07/README.md)
 * [React 项目应用](React-08/README.md)
   * [React 文件组织方式](React-08/react-wen-jian-zu-zhi-fang-shi.md)
