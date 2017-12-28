@@ -73,6 +73,8 @@ class App extends React.Component{
 export default App;
 ```
 
+这样就是通过在构造函数里声明。不会在每次render的时候重复生成
+
 #### 组件数据传递
 
 ```js
