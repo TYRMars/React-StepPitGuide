@@ -48,6 +48,8 @@
 * [React 性能优化](React-06/README.md)
   * [React 组件优化](React-06/react-zu-jian-you-hua.md)
     * [定制shouldComponentUpdate](React-06/react-zu-jian-you-hua/ding-zhi-shouldcomponentupdate.md)
+    * [PureComponent](React-06/react-zu-jian-you-hua/purecomponent.md)
+    * [immutablejs存在的意义和使用](React-06/react-zu-jian-you-hua/immutablejscun-zai-de-yi-yi-he-shi-yong.md)
   * [Redux性能优化](React-06/reduxxing-neng-you-hua.md)
   * [React同构](React-06/reacttong-gou.md)
 * [React 服务端渲染](React-07/README.md)

@@ -41,8 +41,6 @@ class Demo extends React.Component {
 export default App
 ```
 
-
-
 ---
 
 ## React16性能检测
@@ -69,6 +67,8 @@ shouldComponentUpdate(nextProps, nextState){
   return true
 }
 ```
+
+### 
 
 
 
