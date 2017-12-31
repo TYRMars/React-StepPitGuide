@@ -9,5 +9,7 @@ let obj1 = {name:1}
 console.log(obj == obj1)//false
 ```
 
+在JS中无法通过 == 对比两对象是否相等
 
+如果通过一个函数
 
