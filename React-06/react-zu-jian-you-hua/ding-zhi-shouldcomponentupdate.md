@@ -60,12 +60,19 @@ export default App
 主要就是对比现有的props和state与改变后的不同，如果相同就不会再次渲染
 
 ```js
-shouldComponentUpdate(nextProps, nextState){
+class Demo extends React.Component {
+  shouldComponentUpdate(nextProps, nextState){
   if(nextProps.title === this.props.title){
     return false
   }
   return true
 }
+  render() {
+    return (<h2>I am Demo，{this.props.title}</h2>)
+  }
+}
+
+export default App
 ```
 
 ### 
