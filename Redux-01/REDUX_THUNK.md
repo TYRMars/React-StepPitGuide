@@ -14,7 +14,7 @@
   * 使用`applyMiddleware`开启thunk中间件
   * `Action`可以返回函数，使用`dispatch`提交`action`
 
-```JavaScript
+```js
 //创建一个异步动作
 export function addAsync() {
   return dispatch=>{
@@ -28,7 +28,7 @@ export function addAsync() {
 
 * index.js
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
@@ -48,7 +48,7 @@ store.subscribe(render)
 
 * index.redux.js
 
-```JavaScript
+```js
 const ADD = 'add';
 const REDUCE = 'reduce';
 
@@ -87,7 +87,7 @@ export function addAsync() {
 
 * App.js
 
-```JavaScript
+```js
 import React from 'react'
 
 class App extends React.Component {

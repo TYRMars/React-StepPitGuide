@@ -4,7 +4,7 @@
 * 使用compose结合thunk和winows.devToolsExtension
 * 调试窗的redux选项卡，实时看到state
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'

@@ -109,3 +109,73 @@ function compareObj(obj1,obj2){
 
 查看Github上的 [immutable.js](https://github.com/facebook/immutable-js) - Facebook的一个库（[介绍](http://facebook.github.io/immutable-js/)）
 
+```js
+import React from 'react'
+import { Map } from 'immutable'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      num: 1,
+      title: 'tyrmars',
+      name: 'zhang'
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleTitle = this.handleTitle.bind(this)
+  }
+  handleClick() {
+    this.setState({
+      num: this.state.num + 1
+    })
+  }
+  handleTitle() {
+    this.setState({
+      title:this.state.title + '!'
+    })
+  }
+  render() {
+    console.log('render');
+    return (<div>
+      <h2>I am App{this.state.num}</h2>
+      <button onClick={this.handleClick}>button 1</button>
+      <button onClick={this.handleTitle}>btnTitle</button>
+      <Demo title={this.state.title}></Demo>
+    </div>)
+  }
+}
+
+let obj = Map({
+  'name':'yueyue',
+  'course':Map({'name':'react'})
+})
+
+let obj1 = obj.set('name','zhang')
+
+let obj2 = Map({
+  'name':'yueyue',
+  'course':Map({'name':'react'})
+})
+
+console.log(obj1===obj);
+console.log(obj2.course===obj.course);
+
+
+class Demo extends React.Component {
+  shouldComponentUpdate(nextProps, nextState){
+    if (nextProps.title===this.props.title) {
+      return false
+    }
+    return true
+  }
+  render() {
+    return (<h2>I am Demo {this.props.title}</h2>)
+  }
+}
+
+export default App
+
+```
+
+
+
