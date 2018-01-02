@@ -1,4 +1,4 @@
-### React虚拟DOM概念
+# React虚拟DOM概念
 
 #### 虚拟DOM的结构
 
