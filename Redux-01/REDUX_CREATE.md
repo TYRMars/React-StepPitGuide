@@ -155,15 +155,59 @@ export function bindActionCreators(creators,dispatch){
 ##### 实现传入一个函数
 
 ```js
+export function createStore(reducer,enhancer) {
+  if(enhancer) {
+    return enhancer(createStore,reducer)
+  }
+  let currentState = {}
+  let currentListeners = []
+
+  function getState() {
+    return currentState
+  }
+
+  function subscribe(listener) {
+    //传入函数
+    currentListeners.push(listener)
+  }
+
+  function dispatch(action){
+    currentState = reducer(currentState,action)
+    currentListeners.forEach(v=>v())
+    return action
+  }
+
+  //触发初始状态
+  dispatch({type:'@TYRMARS/Mars-Redux'})
+
+  return {getState,subscribe,dispatch}
+}
+
+function bindActionCreator(creator,dipatch){
+  return (...args) => dispatch(creator(...args))
+}
+
+export function bindActionCreators(creators,dispatch){
+  let bound = {}
+  Object.keys(creators).forEach(v=>{
+    let creator = creators[v]
+    bound[v] = bindActionCreator(creator,dipatch)
+  })
+  return bound
+}
+
 export function applyMiddleWare(middleware){
    return createStore=>(...args)=>{
+      //生成原生的store
       const store = createStore(...args)
+      //获取原生的dispatch
       let dispatch = store.dispatch
+      //生成一个中间件的API
       const midApi = {
         getState:store.getState,
         dispatch:(...args)=>disptach(...args)
       }
-      dispatch = middleware(midApi)(store.dispatch)
+      dispatch = middleware(midApi)(store.dispatch)(action)
       // middleware(midApi)(store.dispatch)(action)
       return {
         ...store,
