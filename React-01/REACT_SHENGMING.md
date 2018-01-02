@@ -48,9 +48,9 @@ class MyCompoment extends React.Component{
 
 ---
 
-#### ES5生命周期
+#### 生命周期详情
 
-#### ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)ES6生命周期（NEW）
+#### ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)生命周期流程
 
 #### ![](https://camo.githubusercontent.com/2d82a2e67c415a05b33005d0f500c679d34b2639/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313831343335342d346266363265353435353361333262372e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
@@ -183,7 +183,6 @@ function Rd(props) {
 }
 
 export default App;
-
 ```
 
 
