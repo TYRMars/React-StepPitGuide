@@ -18,5 +18,17 @@ console.log(this.refs.submitButton);
 this.refs.submitButton.style.color = 'red';
 ```
 
+### 第二种方法
+
+```js
+<input ref='myInput' />
+this.refs.myInput//通过这种方式对DOM进行操作
+```
+
+* Refs是访问到组件内部DOM节点唯一可靠的方法
+* Refs会自动销毁对子组件的引用
+* 不要在render或render之前对Refs进行调用
+* 不要滥用Refs
+
 
 
