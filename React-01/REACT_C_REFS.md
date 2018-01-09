@@ -30,5 +30,29 @@ this.refs.myInput//通过这种方式对DOM进行操作
 * 不要在render或render之前对Refs进行调用
 * 不要滥用Refs
 
+### 不使用ref
+
+可以利用组件状态来同步记录DOM元素的值，这种方法控制住组建不使用ref
+
+就是通过DOM事件，DOM事件中有个event，当我们使用事件函数传入event就是当前这个DOM对象，通过这种方式操作会好很多
+
+```js
+render(){
+  return (
+   <div>
+     <form onSubmit={this.onSubmit}>
+       <input onChange={this.onInputChange}/>
+     </form>
+   </div>
+  )
+}
+
+onInputChange(event) {
+  this.setState({
+    value: event.target.value
+  });
+}
+```
+
 
 

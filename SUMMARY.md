@@ -24,7 +24,7 @@
   * [React 可复用组件](React-01/REACT_C_DOL.md)
   * [React 事件与数据的双向绑定](React-02/REACT_SHIJIAN_TWO.md)
   * [React PropTypes](React-01/react-proptypes.md)
-  * [React 组件Refs](React-01/REACT_C_REFS.md)
+  * [React 组件DOM操作](React-01/REACT_C_REFS.md)
   * [React 独立组件间共享 Mixins ⚠](React-02/REACT_MINXI.md)
   * [React HOC高阶组件](React-02/REACT_HOC.md)
   * [React 容器组件和展示组件](React-01/react-rong-qi-zu-jian-he-sha-gua-zu-jian.md)
