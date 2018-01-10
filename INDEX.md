@@ -27,6 +27,10 @@
 
 * [React教师听课助手前端开发](https://github.com/TYRMars/React-TeacherLinstenAssistant) \| 技术栈 : React16+Antd+Router4+Redux+axios+Express+MongoDB \| 响应式开发
 
+* [React-MarkDown插件](https://github.com/TYRMars/React-MarkDown) \| 采用[marked](https://github.com/chjj/marked)
+
+* [React电商网站](https://github.com/TYRMars/React-MSide-Shop) \| React16，适用于Web-M端商城
+
 ---
 
 这些知识都是自己在学习React的时候的一些总结，希望能和大家多多交流
