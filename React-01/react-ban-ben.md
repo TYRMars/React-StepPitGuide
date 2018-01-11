@@ -20,7 +20,7 @@
 
 * 新版的React没有演示文件，使用的`React 15.3.2`
 
-* 在examples／basic／下index.html是一个事例可以研究一下,这个地方体现了React在页面上的高性能的优点
+* 在`examples／basic／`下index.html是一个事例可以研究一下,这个地方体现了React在页面上的高性能的优点
 
 ```js
 var ExampleApplication = React.createClass({
