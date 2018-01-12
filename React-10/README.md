@@ -41,7 +41,7 @@ const list = (
 )
 /*  */
 const $root = document.getElementById('root');
-$root.appendChild(createElement(list))
+$root.appendChild(createElement(list)) 
 ```
 
 
