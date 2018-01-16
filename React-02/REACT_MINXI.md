@@ -6,7 +6,7 @@
 * 测试一下Mixin是如何运行的
 * 在`src/js/components`下创建`mixins.js`
 
-```JavaScript
+```js
 const MixinLog = {
     componentDidMount(){
     console.log("MixinLog componentDidMount");//查看Mixin生命周期
@@ -19,7 +19,7 @@ export default MixinLog//向外输出
 
 * 在bodyIndex.js中
 
-```JavaScript
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BodyChild from './bodychild';
