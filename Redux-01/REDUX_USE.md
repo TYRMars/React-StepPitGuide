@@ -1,44 +1,39 @@
-# Redux使用
+# Redux
 
-![](/assets/20160206132837_580.png)
+![](https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67)
 
-* 通过`reducer`新建`store`，随时通过`store.getState`获取状态
-* 需要状态变更，`store.dispatch(action)`来修改状态
-* `reducer`函数接受`state`和`action`，🔙返回🆕新的`state`，可以用`store.subscribe`监听每次修改
+* Redux专注与状态管理、和react解耦
+* 单一状态、单向数据流
+* 核心概念：`store`、`state`、`action`
 
-##### `index.js`
+```
+为什么会出现Redux呢，因为在处理少量数据的时候，可以使用setState
+但是如果，现在有🈶️成千上万的数据，数据的传递就要和组件的显示分开
+所以Redux就是来帮助React来管理数据的，React现在只负责自己的View
+```
+
+* `store`:📝记录了所有组件的状态\(state\)
+* `dispatch`:更改管理实体
+* `action`:要更改什么
+* `reducer`:这个🈯️指的是要改变的组件，它获取`state`和`action`，生成新的`state`
+
+## Action
+
+action 内必须使用一个字符串类型的`type`字段来表示将要执行的动作。多数情况下，`type`会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 `action`。
+
+## Action创建函数
+
+**Action 创建函数**就是生成 action 的方法。
 
 ```js
-import {createStore} from 'redux'
+// action creator
 
-function counter(state=0,action) {
-  switch (action.type) {
-    case 'add':
-      return state+1;
-    case 'reduce':
-      return state-1;
-    default:
-      return 10
-  }
-}
-
-//新建store
-const store = createStore(counter);
-const init = store.getState();
-console.log(init);
-
-//监听
-function listener() {
-  const current = store.getState();
-  console.log(`现在有的${current}`);
-}
-store.subscribe(listener)
-
-//派发事件 传递aciton
-store.dispatch({type:'add'});
-store.dispatch({type:'reduce'});
-store.dispatch({type:'add'});
-store.dispatch({type:'add'});
+export function add() {
+  return {type:ADD};
+};
+export function reduce() {
+  return {type:REDUCE};
+};
 ```
 
 

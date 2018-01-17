@@ -8,10 +8,10 @@
 
 * App.js之前是从`counter`直接获取的父组件的传过来的参数，不用选取`counter`
 * 但是合并后`state`对象变成了合并后的`reducer`，所以需要改变
-  - 改变前`@connect(state => ({num:state}),{add, minus, addAsync})`
-  - 改变后`@connect(state => ({num:state.counter}),{add, minus, addAsync})`
+  * 改变前`@connect(state => ({num:state}),{add, minus, addAsync})`
+  * 改变后`@connect(state => ({num:state.counter}),{add, minus, addAsync})`
 
-```JavaScript
+```js
 import React from 'react'
 import { connect } from 'react-redux'
 import {add, minus, addAsync} from './index.redux'
@@ -47,7 +47,7 @@ export default App
 
 * index.js
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
@@ -82,7 +82,7 @@ ReactDom.render(
 
 * index.redux.js
 
-```JavaScript
+```js
 const ADD = 'add';
 const MINUS = 'minus';
 
@@ -120,7 +120,7 @@ export function addAsync() {
 
 * Auth.js
 
-```JavaScript
+```js
 import React from 'react'
 import { connect } from 'react-redux'
 import { login } from './Auth.redux'
@@ -153,7 +153,7 @@ export default Auth
 
 * Auth.redux.js
 
-```JavaScript
+```js
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 
@@ -180,7 +180,7 @@ export function logout() {
 
 * reducer.js
 
-```JavaScript
+```js
 //合并reducer 并返回
 import { combineReducers } from 'redux'
 import { counter } from "./index.redux";
@@ -191,7 +191,7 @@ export default combineReducers({ counter , auth })
 
 * Dashboard.js
 
-```JavaScript
+```js
 import React from 'react'
 import {Route, Link,Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -256,7 +256,7 @@ export default Dashboard
 * 为了减少`to='/dashboard/'`，可以将其通过`this.props.match`来获取
 * 可以更新`Dashboard.js`
 
-```JavaScript
+```js
 //。。。
     render() {
       const match = this.props.match;
@@ -285,3 +285,6 @@ export default Dashboard
         return this.props.isAuth ? app: redirectToLogin
     }
 ```
+
+
+

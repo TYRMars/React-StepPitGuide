@@ -12,7 +12,7 @@
 * Router路由对应渲染的组件，可嵌套
 * Link跳转专用
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
@@ -71,7 +71,7 @@ ReactDom.render(
 * Redirect组件 跳转
 * Switch只是渲染一个子Route组件
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
@@ -116,11 +116,11 @@ ReactDom.render(
 );
 ```
 
-##### `Redirect,Switch`
+### Redirect
 
 `<Redirect to='/Second'></Redirect>`初始的页面，访问主页面自动跳转此页面
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
@@ -170,7 +170,7 @@ ReactDom.render(
 );
 ```
 
-##### `Switch`
+### Switch
 
 * 只渲染命中的第一个Route
 
@@ -235,3 +235,6 @@ ReactDom.render(
     document.getElementById('root')
 );
 ```
+
+
+

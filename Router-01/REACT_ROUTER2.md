@@ -1,4 +1,4 @@
-# React Router2概念
+# React Router2
 
 * 由于对于新版的`Router`的不熟悉，这节开始转向`Router2`和`webpack1`，等待`React-Router4`理解后，我会更新这几章
 * [Router](https://github.com/ReactTraining/react-router)
