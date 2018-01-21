@@ -1,22 +1,8 @@
 # React高阶组件
 
-* 装饰器模式
+高阶组件\(Higher Order Component,HOC\)是为React提供一种增强组件功能的开发模式。
 
-```js
-function hello() {
-  console.log('hello YueYue');
-}
-
-function WrapperHello(fn) {
-  return function () {
-    console.log('before hello');
-    fn()
-    console.log('after hello');
-  }
-}
-hello = WrapperHello(hello)
-hello()
-```
+它是函数形式出现，本身可以称为“**`高阶组件工厂函数`**”，**高阶组件**是一个函数，它的参数就是要增强功能的组件，然后返回一个新组件作为结果
 
 ### React使用
 
@@ -70,6 +56,26 @@ export function WrapperHello(Comp) {
 ```
 
 ##### 被HOC包裹的组件
+
+* 装饰器模式
+
+```js
+function hello() {
+  console.log('hello YueYue');
+}
+
+function WrapperHello(fn) {
+  return function () {
+    console.log('before hello');
+    fn()
+    console.log('after hello');
+  }
+}
+hello = WrapperHello(hello)
+hello()
+```
+
+* example
 
 ```js
 //正常写法

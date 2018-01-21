@@ -51,7 +51,9 @@ export default App
 
 通过此方法可以在浏览器默认的性能监视器Performance中查看性能改变
 
-![](/assets/微信截图_20171230201617.png)![](/assets/微信截图_20171230201653.png)test
+![](/assets/微信截图_20171230201617.png)![](/assets/微信截图_20171230201653.png)
+
+* test
 
 ---
 

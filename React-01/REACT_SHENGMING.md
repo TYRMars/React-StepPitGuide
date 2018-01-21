@@ -16,16 +16,33 @@ componentDidMount(){
 
 #### 1.组件首次加载
 
-* `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。
-* `getInitialState`只会在装载之前调用一次，这个函数的返回值会被设置到`this.state`中，需要注意的是，在ES6的写法，只需写在`constructor`中即可，如下
+* constructor
+* ~~`getInitialState`~~只会在装载之前调用一次，这个函数的返回值会被设置到`this.state`中，需要注意的是，在ES6的写法，只需写在`constructor`中即可（ES5）
+* ~~`getDefaultProps`~~只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。（ES5）
 
 ```js
-class MyCompoment extends React.Component{
-  constructor(props) {
-    super(props);
-    //在这里声明state
-    this.state = {count: 0};
+const Sample =　React.createClass({
+  getInitalstate:function (){
+    return {name:'tyrmars'};
+  },
+  getDefaultProps:function (){
+    return {sampleProps: 0}
   }
+})
+```
+
+* `defaultProps`赋值指定props初始，在ES6写法中应用，如下
+
+```js
+class Sample extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {name:'tyrmars'}
+  }
+};
+
+Sample.defaultProps = {
+  sampleProps: 0
 }
 ```
 
