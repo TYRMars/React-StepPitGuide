@@ -26,15 +26,15 @@
   * [React PropTypes](React-01/react-proptypes.md)
   * [React 组件DOM操作](React-01/REACT_C_REFS.md)
   * [React 独立组件间共享 Mixins ⚠](React-02/REACT_MINXI.md)
-  * [React 高阶组件\(HOC\)与函数子组件](React-02/REACT_HOC.md)
+  * [React 高阶组件\(HOC\)](React-02/REACT_HOC.md)
     * [代理方式的高阶组件](React-02/REACT_HOC/dai-li-fang-shi-de-gao-jie-zu-jian.md)
     * [继承方式的高阶组件](React-02/REACT_HOC/ji-cheng-fang-shi-de-gao-jie-zu-jian.md)
   * [React 容器组件和展示组件](React-01/react-rong-qi-zu-jian-he-sha-gua-zu-jian.md)
   * [React Context](React-01/react-context.md)
-  * [React React-Redux](React-01/react-react-redux.md)
-  * [React 自制React-Redux](React-01/react-zi-zhi-react-redux.md)
   * [React 顶级API](React-01/react-ding-ji-api.md)
   * React 无状态组件与PureComponent
+  * React 函数子组件
+  * React Portal 传送门
 * [React 数据分离](Redux-01/README.md)
   * [Flux](Redux-01/Flux/README.md)
   * [Redux](Redux-01/REDUX_USE.md)
@@ -45,6 +45,8 @@
     * [Redux 结合React](Redux-01/REDUX_AND_REACT.md)
     * [React 自制thunk中间件](Redux-01/Flux/react-zi-zhi-thunk-zhong-jian-jian.md)
     * [Redux 自制Redux](Redux-01/REDUX_CREATE.md)
+    * [React React-Redux](React-01/react-react-redux.md)
+    * [React 自制React-Redux](React-01/react-zi-zhi-react-redux.md)
   * [Mobx](Redux-01/Flux/mobx.md)
     * [Mobx 思想](Redux-01/Flux/mobx/mobx-si-xiang.md)
 * [React 路由](Router-01/README.md)

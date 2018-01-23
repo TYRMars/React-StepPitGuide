@@ -14,11 +14,13 @@ componentDidMount(){
 
 * `componentDidMount`这个方法就是在`render`完成并且组件装载完成之后调用的方法，所以界面中先显示为0，1秒以后此方法被调用，界面被重新渲染，`like`值变成了1
 
+
+
 #### 1.组件首次加载
 
 * constructor
-* ~~`getInitialState`~~只会在装载之前调用一次，这个函数的返回值会被设置到`this.state`中，需要注意的是，在ES6的写法，只需写在`constructor`中即可（ES5）
-* ~~`getDefaultProps`~~只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。（ES5）
+* `getInitialState`只会在装载之前调用一次，这个函数的返回值会被设置到`this.state`中，需要注意的是，在ES6的写法，只需写在`constructor`中即可（ES5）
+* `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。（ES5）
 
 ```js
 const Sample =　React.createClass({
@@ -63,11 +65,17 @@ Sample.defaultProps = {
 
 * `componentWillUnmount`，在组件被卸载和销毁之前调用的方法，可以在这里做一些清理的工作。
 
+
+
 ---
+
+#### 
 
 #### 生命周期详情
 
-#### ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)生命周期流程
+#### ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/React生命周期.png)
+
+#### 生命周期流程
 
 #### ![](https://camo.githubusercontent.com/2d82a2e67c415a05b33005d0f500c679d34b2639/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313831343335342d346266363265353435353361333262372e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
@@ -124,6 +132,8 @@ class Index extends React.Component {
 // 入口
 ReactDOM.render( <Index /> , document.getElementById('example'));
 ```
+
+#### 
 
 #### 所有生命周期尝试
 

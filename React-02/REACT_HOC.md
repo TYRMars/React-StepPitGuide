@@ -30,9 +30,5 @@ function doingThings (BaseComponent){
 1. 代理方式的高阶组件
 2. 继承方式的高阶组件
 
----
-
-### 函数子组件
-
 
 
