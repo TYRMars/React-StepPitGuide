@@ -1,4 +1,4 @@
-[![](/assets/屏幕快照 2017-12-05 下午10.19.57.png)](https://github.com/TYRMars)
+[![](/assets/Github.png)](https://github.com/TYRMars)
 
 ---
 
@@ -6,9 +6,10 @@
 
 ---
 
-#### 知识来源：
+#### 学习知识来源：
 
-* 慕课网：React.js入门与案例开发
+* 慕课网：[React.js入门与案例开发](https://coding.imooc.com/class/83.html)
+* 慕课网：[React+Redux+Express开发](https://coding.imooc.com/class/150.html)
 * 《React全栈-Redux+Flux+webpack+Babel整合开发》
 * 《深入浅出React和Redux》
 * [Redux中文文档](http://cn.redux.js.org/)
