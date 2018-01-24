@@ -14,5 +14,10 @@ function doingThings (BaseComponent){
 }
 ```
 
+继承组件可以应用一下两个场景：
+
+* 操纵props；
+* 操纵函数生命周期
+
 
 

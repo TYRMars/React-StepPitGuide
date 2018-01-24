@@ -32,3 +32,15 @@ function doingThings (BaseComponent){
 
 
 
+### 2.访问ref
+
+
+
+### 3.抽取状态
+
+
+
+### 4.包装组件
+
+
+
