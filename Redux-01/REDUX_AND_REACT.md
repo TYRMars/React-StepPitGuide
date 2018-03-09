@@ -2,7 +2,7 @@
 
 ##### `index.js`
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import {createStore} from 'redux'
@@ -21,7 +21,7 @@ store.subscribe(render)
 
 ##### `App.jsx`
 
-```JavaScript
+```js
 import React from 'react'
 import {add} from './index.redux'
 class App extends React.Component {
@@ -42,7 +42,7 @@ export default App
 
 ##### `index.redux.js`
 
-```JavaScript
+```js
 //aciton
 const ADD = 'add';
 const REDUCE = 'reduce';
@@ -72,7 +72,7 @@ exports.reduce = function () {
 * index.redux.js封装📦了`add`函数，直接import这个函数
 * 通过参数形式传递给App.js
 
-```JavaScript
+```js
 import React from 'react'
 import ReactDom from 'react-dom'
 import {createStore} from 'redux'
@@ -93,7 +93,7 @@ store.subscribe(render)
 
 * App.js通过组件内部接受父组件传递来的数据
 
-```JavaScript
+```js
 import React from 'react'
 
 class App extends React.Component {
