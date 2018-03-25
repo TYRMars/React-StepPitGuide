@@ -224,6 +224,8 @@ export function applyMiddleWare(middleware){
 ### compose.js
 
 ```js
+// compose(fn1,fn2,fn3)
+// fn1(fn2(fn3))
 export function compose(...funcs){
   if (funcs.length==0) {
     return arg=>arg
@@ -279,7 +281,7 @@ export function bindActionCreators(creators,dispatch){
   return bound
 }
 
-export function applyMiddleWare(middleware){
+export function applyMiddleWare(...middlewares){
    return createStore=>(...args)=>{
       //生成原生的store
       const store = createStore(...args)
@@ -290,17 +292,19 @@ export function applyMiddleWare(middleware){
         getState:store.getState,
         dispatch:(...args)=>disptach(...args)
       }
-      dispatch = middleware(midApi)(store.dispatch)(action)
+      middlewareChain = middlewares.map(middleware=>middleware(midApi))
+      dispatch = compose(...middlewareChain)(store.dispatch)
+      //dispatch = middleware(midApi)(store.dispatch)(action)
       // middleware(midApi)(store.dispatch)(action)
+      // middlewares.map
       return {
         ...store,
         dispatch
       }
    }
+   // middlewares.map...
 }
 ```
-
-
 
 
 
