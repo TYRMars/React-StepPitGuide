@@ -227,13 +227,13 @@ export function applyMiddleWare(middleware){
 // compose(fn1,fn2,fn3)
 // fn1(fn2(fn3))
 export function compose(...funcs){
-  if (funcs.length==0) {
+  if (funcs.length === 0) {
     return arg=>arg
   }
-  if (funcs.length==1) {
+  if (funcs.length === 1) {
     return funcs[0]
   }
-  return funcs.reduce((ret,item) => (...args) => ret(item(...arg)))
+  return funcs.reduce((ret,item) => (...args) => ret(item(...args)))
 }
 ```
 
@@ -292,7 +292,7 @@ export function applyMiddleWare(...middlewares){
         getState:store.getState,
         dispatch:(...args)=>disptach(...args)
       }
-      middlewareChain = middlewares.map(middleware=>middleware(midApi))
+      const middlewareChain = middlewares.map(middleware=>middleware(midApi))
       dispatch = compose(...middlewareChain)(store.dispatch)
       //dispatch = middleware(midApi)(store.dispatch)(action)
       // middleware(midApi)(store.dispatch)(action)
