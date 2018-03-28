@@ -82,7 +82,8 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
       const {store} = this.context
       const stateProps = mapStateToProps(store.getState())
       //不能直接传递
-      // add = ()=> store.dipatch(add())才有意义
+      // add = ()=> store.dipatch(add())通过dispatch才有意义
+      // 在这里其实就是用dispatch把actionCreator包了一层
       const stateDispatch = bindActionCreators(mapDispatchToProps,store.dispatch)
       this.setState(
        props:{
