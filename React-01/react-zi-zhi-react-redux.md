@@ -1,6 +1,6 @@
 # React 自制React-Redux
 
-### connect负责链接组件，给到redux里的数据放到组建属性中
+### connect负责链接组件，把redux里的数据放到组件属性中
 
 ```js
 export function connect(){
