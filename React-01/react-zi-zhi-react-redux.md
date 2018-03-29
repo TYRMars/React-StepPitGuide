@@ -61,7 +61,7 @@ import {bindActionCreators} from './tyrmars-redux.js'
 //  return state
 //}
 //connect
-export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
+export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>(WrapComponent)=>{
   return class ConnectComponent extends React.Component{
     static contextType = {
       store:PropTypes.object
@@ -71,7 +71,6 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
       this.state = {
         props:{}
       }
-      this.update = this.update.bind(this)
     }
     componentDidMount(){
       const {store} = this.context
@@ -102,7 +101,7 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
 }
 //Provider
 export class Provider extends React.Component{
-  static childContextType = {
+  static childContextTypes = {
     store:PropTypes.object
   }
   getChildContext(){
