@@ -71,6 +71,7 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
       this.state = {
         props:{}
       }
+      this.update = this.update.bind(this)
     }
     componentDidMount(){
       const {store} = this.context
@@ -88,7 +89,7 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
       this.setState(
        props:{
        //一定要把this.state.props放在最上面，因为要覆盖之前的state
-        ...this.state.props
+        ...this.state.props,
         ...stateProps,
         ...stateDispatch,
        }
@@ -100,7 +101,7 @@ export const connect = (mapStateToProps=state=>state,mapDispatchToProps={})=>{
   }
 }
 //Provider
-class Provider extends React.Component{
+export class Provider extends React.Component{
   static childContextType = {
     store:PropTypes.object
   }
