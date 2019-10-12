@@ -41,5 +41,24 @@ store.dispatch({type:'add'});
 store.dispatch({type:'add'});
 ```
 
+## Action
+
+action 内必须使用一个字符串类型的`type`字段来表示将要执行的动作。多数情况下，`type`会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 `action`。
+
+## Action创建函数
+
+**Action 创建函数**就是生成 action 的方法。
+
+```js
+// action creator
+
+export function add() {
+  return {type:ADD};
+};
+export function reduce() {
+  return {type:REDUCE};
+};
+```
+
 
 
