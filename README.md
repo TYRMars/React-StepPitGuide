@@ -1,2 +1,4 @@
-[![](/assets/React.png)](https://tyrmars.gitbooks.io/react-steppitguide/content/ "react-steppitguide")
+# 封面
+
+![](.gitbook/assets/React.png)
 
