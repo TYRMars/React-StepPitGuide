@@ -2,7 +2,7 @@
 
 * [封面](README.md)
 * [前言](index.md)
-* [React- 环境配置](tools/README.md)
+* [React 环境配置](tools/README.md)
   * [WebPack 前端打包工具](tools/webpack.md)
   * [Babel 编译器](tools/babel_use.md)
   * [Node 环境配置](tools/node_evn.md)
