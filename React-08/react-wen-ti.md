@@ -1,8 +1,8 @@
-### 题目一
+# React 问题
 
 补全代码，使得如下代码可以实现获取文件夹内文件列表功能（Loading 和 FileList 组件可以不用具体实现，只需补全 Folder 组件的代码）：
 
-```js
+```javascript
 /**
  * 使用样例：
  * <Folder id="17">
@@ -41,6 +41,4 @@ Folder.propTypes = {
   children: React.PropTypes.element.isRequired
 }
 ```
-
-
 

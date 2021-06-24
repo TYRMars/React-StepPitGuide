@@ -4,11 +4,9 @@
 
 使用的地方一般是在只接收从父组件传递过来数据的组件，也就是只接受props的组件
 
-```js
+```javascript
 class Demo extends React.PureComponent{
   //....
 }
 ```
-
-
 

@@ -2,7 +2,7 @@
 
 继承方式的高阶组件采用继承关系关联作为参数的组件和返回的组件
 
-```js
+```javascript
 function doingThings (BaseComponent){
   return class DoingThingsComponent extends BaseComponent{
     render(){
@@ -18,6 +18,4 @@ function doingThings (BaseComponent){
 
 * 操纵props；
 * 操纵函数生命周期
-
-
 

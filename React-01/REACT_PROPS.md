@@ -1,9 +1,10 @@
 # React Props属性
 
-#### Props事例
+## Props事例
 
 * index.js代码
-  ```JavaScript
+
+  ```javascript
   ...
   render() {
   return (
@@ -16,9 +17,10 @@
   }
   ...
   ```
+
 * bodyIndex.js代码
 
-  ```JavaScript
+  ```javascript
   import React from 'react';
   export default class BodyIndex extends React.Component {
   constructor() {
@@ -46,6 +48,4 @@
   ```
 
 * 可以用`Chorme React`组件中查看到，`Props`相当于跨组件传值，而且优点在于不会影响其他模块的值。`Props`对于模块本身来说属于外来属性。
-
-
 

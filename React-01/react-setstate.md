@@ -1,6 +1,4 @@
 # React setState
 
-![](/assets/setState.jpg)
-
-
+![](../.gitbook/assets/setState.jpg)
 

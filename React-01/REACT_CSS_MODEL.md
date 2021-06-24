@@ -1,10 +1,9 @@
 # React CSS模块化
 
 * `"babel-plugin-react-html-attrs": "^2.0.0"`让JSX中`className`能变回原来`class`
-
 * webpack要重新配置
 
-```js
+```javascript
 // webpack.config.js
 var webpack = require("webpack");
 var path = require("path");
@@ -64,7 +63,7 @@ module.exports = {
 
 * 在footer.js下写
 
-```JavaScript
+```javascript
 import React from 'react';
 
 var footerCss = require("../../css/footer.css");//引入css
@@ -82,10 +81,6 @@ export default class CompomentFooter extends React.Component{
 ```
 
 * 因为我们在打包时设置了`localIdentName:'[path][name]__[local]--[hash:base64:5]'`，这地方就是引用css的路径限制。
-
 * 默认情况下，CSS 将所有的类名暴露到全局的选择器作用域中。样式可以在局部作用域中，避免全局作用域的样。详细🔎请查看官方文档[官方文档式](https://doc.webpack-china.org/loaders/css-loader/#scope)
-
 * 所以在浏览器中`console`出了`Object {miniFooter: "css-footer__miniFooter--2W_7G"}`
-
-
 

@@ -2,7 +2,7 @@
 
 * bodyIndex.js代码
 
-```js
+```javascript
 import React from 'react';
 import BodyChild from './bodychild'
 export default class BodyIndex extends React.Component {
@@ -38,7 +38,7 @@ export default class BodyIndex extends React.Component {
 
 * bodychild.js代码
 
-```js
+```javascript
 import React from 'react';
 export default class BodyChild extends React.Component{
 
@@ -57,6 +57,4 @@ export default class BodyChild extends React.Component{
 * `ES6`的语法注意
   * 函数绑定方法this ：`this.forceUpdateHander = this.forceUpdateHander.bind(this)`
   * 或者调用时绑定：`onClick={this.changeUserInfo.bind(this,50)}`
-
-
 

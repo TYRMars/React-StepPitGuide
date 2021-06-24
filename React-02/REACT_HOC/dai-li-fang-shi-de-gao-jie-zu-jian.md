@@ -2,7 +2,7 @@
 
 代理方式的高阶组件，特点是返回新组件，直接继承React.Component
 
-```js
+```javascript
 import React from 'react'
 
 function doingThings (BaseComponent){
@@ -26,21 +26,11 @@ function doingThings (BaseComponent){
 * 抽取状态；
 * 包装组件；
 
----
+## 1.操纵prop
 
-### 1.操纵prop
+## 2.访问ref
 
+## 3.抽取状态
 
-
-### 2.访问ref
-
-
-
-### 3.抽取状态
-
-
-
-### 4.包装组件
-
-
+## 4.包装组件
 

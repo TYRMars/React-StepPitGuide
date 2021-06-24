@@ -1,4 +1,4 @@
-# React ~~独立组件间共享 Mixins~~
+# React 独立组件间共享 Mixins ⚠
 
 不提倡使用，提倡使用HOC高阶组件
 
@@ -6,7 +6,7 @@
 * 测试一下Mixin是如何运行的
 * 在`src/js/components`下创建`mixins.js`
 
-```js
+```javascript
 const MixinLog = {
     componentDidMount(){
     console.log("MixinLog componentDidMount");//查看Mixin生命周期
@@ -19,7 +19,7 @@ export default MixinLog//向外输出
 
 * 在bodyIndex.js中
 
-```js
+```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BodyChild from './bodychild';
@@ -38,6 +38,4 @@ ReactMixin(BodyIndex.propTypes,MixinLog);
 ```
 
 * 点击页面上的提交按钮🔘在`console.log`中会出现`MixinLog componentDidMount`和`tyrmars`
-
-
 
