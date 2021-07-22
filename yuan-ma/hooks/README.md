@@ -98,6 +98,7 @@ function updateFunctionComponent(
     }
   }
 
+  // context 获取
   let context;
   if (!disableLegacyContext) {
     const unmaskedContext = getUnmaskedContext(workInProgress, Component, true);
@@ -158,6 +159,7 @@ function updateFunctionComponent(
   return workInProgress.child;
 }
 
+//跳过hooks更新
 export function bailoutHooks(
   current: Fiber,
   workInProgress: Fiber,
@@ -189,7 +191,6 @@ export function renderWithHooks<Props, SecondArg>(
   secondArg: SecondArg,
   nextRenderLanes: Lanes,
 ): any {
-  // 优先级
   renderLanes = nextRenderLanes;
   currentlyRenderingFiber = workInProgress;
 
@@ -204,7 +205,9 @@ export function renderWithHooks<Props, SecondArg>(
       current !== null && current.type !== workInProgress.type;
   }
 
+  // 上一次渲染的时候的 state
   workInProgress.memoizedState = null;
+  // 该 Fiber 对应的组件产生的 update 会存放在这个队列里面。
   workInProgress.updateQueue = null;
   workInProgress.lanes = NoLanes;
 
@@ -236,8 +239,8 @@ export function renderWithHooks<Props, SecondArg>(
     }
   } else {
     // 用来存放 useState、useEffect 等 hook 函数的对象
-    // 对于第一个渲染走的是 HooksDispatcherOnMount
-    // 之后走的是 HooksDispatcherOnUpdate
+    // 对于第一个渲染的是 HooksDispatcherOnMount
+    // 之后的是 HooksDispatcherOnUpdate
     ReactCurrentDispatcher.current =
       current === null || current.memoizedState === null
         ? HooksDispatcherOnMount
@@ -291,8 +294,7 @@ export function renderWithHooks<Props, SecondArg>(
     } while (didScheduleRenderPhaseUpdateDuringThisPass);
   }
 
-  // We can assume the previous dispatcher is always this one, since we set it
-  // at the beginning of the render phase and there's no re-entrancy.
+  // 我们可以假设前一个调度器始终是这个调度器，因为我们在渲染阶段开始时设置它并且没有重入。
   ReactCurrentDispatcher.current = ContextOnlyDispatcher;
 
   if (__DEV__) {
@@ -471,35 +473,14 @@ const HooksDispatcherOnUpdate: Dispatcher = {
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
 ```javascript
-function mountState<S>(
-  initialState: (() => S) | S,
-): [S, Dispatch<BasicStateAction<S>>] {
-  const hook = mountWorkInProgressHook();
-  if (typeof initialState === 'function') {
-    // $FlowFixMe: Flow doesn't like mixed types
-    initialState = initialState();
-  }
-  hook.memoizedState = hook.baseState = initialState;
-  const queue = (hook.queue = {
-    pending: null,
-    dispatch: null,
-    lastRenderedReducer: basicStateReducer,
-    lastRenderedState: (initialState: any),
-  });
-  const dispatch: Dispatch<
-    BasicStateAction<S>,
-  > = (queue.dispatch = (dispatchAction.bind(
-    null,
-    currentlyRenderingFiber,
-    queue,
-  ): any));
-  return [hook.memoizedState, dispatch];
-}
-```
-{% endcode %}
+export type Hook = {|
+  memoizedState: any,
+  baseState: any,
+  baseQueue: Update<any, any> | null,
+  queue: UpdateQueue<any, any> | null,
+  next: Hook | null,
+|};
 
-{% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
-```javascript
 function mountWorkInProgressHook(): Hook {
   const hook: Hook = {
     memoizedState: null,
