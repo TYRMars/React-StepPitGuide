@@ -38,21 +38,6 @@
   * [React Hook](react-02/react-hooks/README.md)
     * [useState](react-02/react-hooks/usestate.md)
     * [useEffect](react-02/react-hooks/useeffect.md)
-* [React 数据分离](redux-01/README.md)
-  * [Flux](redux-01/flux.md)
-  * [Redux](redux-01/redux_use/README.md)
-    * [Redux 使用](redux-01/redux_use/redux-shi-yong.md)
-    * [Redux 异步](redux-01/redux_use/redux_thunk.md)
-    * [Redux Chrome插件使用](redux-01/redux_use/redux_chrome.md)
-    * [Redux React-Redux](redux-01/redux_use/react-react-redux.md)
-    * [Redux applyMiddleware](redux-01/redux_use/redux-applymiddleware.md)
-    * [Redux 结合React](redux-01/redux_use/redux_and_react.md)
-    * [Redux 自制Redux](redux-01/redux_use/redux_create.md)
-    * [Redux 自制React-Redux](redux-01/redux_use/react-zi-zhi-react-redux.md)
-    * [Redux 自制thunk中间件](redux-01/redux_use/react-zi-zhi-thunk-zhong-jian-jian.md)
-    * [Redux 自制arr中间件](redux-01/redux_use/redux-zi-zhi-arr-zhong-jian-jian.md)
-  * [Mobx](redux-01/mobx/README.md)
-    * [Mobx 思想](redux-01/mobx/mobx-si-xiang.md)
 * [React 路由](router-01/README.md)
   * [React-Router2](router-01/react_router2.md)
   * [React-router4](router-01/router4/README.md)
@@ -71,13 +56,26 @@
   * [React 合并reducer](react-08/react-he-bing-reducer.md)
   * [React 问题](react-08/react-wen-ti.md)
 * [React 单元测试](react-09.md)
-* [React Build-React](react-10.md)
-
-## 源码
-
-* [Fiber](yuan-ma/fiber.md)
 
 ## 状态管理
 
-* [Untitled](zhuang-tai-guan-li/untitled.md)
+* [Flux](zhuang-tai-guan-li/flux.md)
+* [Redux](zhuang-tai-guan-li/redux_use/README.md)
+  * [Redux 使用](zhuang-tai-guan-li/redux_use/redux-shi-yong.md)
+  * [Redux 异步](zhuang-tai-guan-li/redux_use/redux_thunk.md)
+  * [Redux Chrome插件使用](zhuang-tai-guan-li/redux_use/redux_chrome.md)
+  * [Redux React-Redux](zhuang-tai-guan-li/redux_use/react-react-redux.md)
+  * [Redux applyMiddleware](zhuang-tai-guan-li/redux_use/redux-applymiddleware.md)
+  * [Redux 结合React](zhuang-tai-guan-li/redux_use/redux_and_react.md)
+  * [Redux 自制Redux](zhuang-tai-guan-li/redux_use/redux_create.md)
+  * [Redux 自制React-Redux](zhuang-tai-guan-li/redux_use/react-zi-zhi-react-redux.md)
+  * [Redux 自制thunk中间件](zhuang-tai-guan-li/redux_use/react-zi-zhi-thunk-zhong-jian-jian.md)
+  * [Redux 自制arr中间件](zhuang-tai-guan-li/redux_use/redux-zi-zhi-arr-zhong-jian-jian.md)
+* [Mobx](zhuang-tai-guan-li/mobx/README.md)
+  * [Mobx 思想](zhuang-tai-guan-li/mobx/mobx-si-xiang.md)
+
+## 源码
+
+* [SimpleReact](yuan-ma/react-10.md)
+* [Fiber](yuan-ma/fiber.md)
 
