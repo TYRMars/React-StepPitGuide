@@ -4,8 +4,43 @@ description: useState 源码解析
 
 # useState
 
+**初始化：** 构建dispatcher函数和初始值
+
+**更新时：**
+
+1. 调用dispatcher函数，按序插入update\(其实就是一个action\)
+2. 收集update，调度一次React的更新
+3. 在更新的过程中将`ReactCurrentDispatcher.current`指向负责更新的Dispatcher
+4. 执行到函数组件App\(\)时，`useState`会被重新执行，在resolve dispatcher的阶段拿到了负责更新的dispatcher。
+5. `useState`会拿到Hook对象，`Hook.queue`中存储了更新队列，依次进行更新后，即可拿到最新的state
+6. 函数组件App\(\)执行后返回的nextChild中的count值已经是最新的了。FiberNode中的`memorizedState`也被设置为最新的state
+7. Fiber渲染出真实DOM。更新结束。
+
+```javascript
+const initialState = {count: 0};
+
+// useReducer的方式
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+// init只在useReducer而非useState时使用，用来初始化 init(initialArg)， 默认为undefined
+const [state, dispatch] = useReducer(reducer, initialState, init);
+
+// useState的方式
+const [count, setCount] = useState(initialState.count);
+```
+
 ## useState
 
+{% code title="ReactFiberHooks.js" %}
 ```javascript
 function basicStateReducer<S>(state: S, action: BasicStateAction<S>): S {
   // $FlowFixMe: Flow doesn't like mixed types
@@ -52,6 +87,7 @@ function rerenderState<S>(
   return rerenderReducer(basicStateReducer, (initialState: any));
 }
 ```
+{% endcode %}
 
 ## useReducer
 
