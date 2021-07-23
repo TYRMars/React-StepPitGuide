@@ -4,7 +4,9 @@ description: Hooks 源码
 
 # Hooks
 
+## ReactHooks入口
 
+所有ReactHooks入口文件
 
 {% code title="packages\\react\\src\\ReactHooks.js" %}
 ```javascript
@@ -72,7 +74,136 @@ export function useImperativeHandle<T>(
 ```
 {% endcode %}
 
-Hooks只有FunctionalComponent被更新的时候才会被调用，所以我们肯定需要关心一下FunctionalComponent的更新过程。
+resolveDispatcher\(\) 返回的是 ReactCurrentDispatcher.current，所以如 useState 其实就是 ReactCurrentDispatcher.current.useState。
+
+## ReactCurrentDispatcher
+
+```javascript
+import type {Dispatcher} from 'react-reconciler/src/ReactFiberHooks';
+
+const ReactCurrentDispatcher = {
+  current: (null: null | Dispatcher),
+}
+```
+
+## Hooks类型定义
+
+### Hook
+
+React 的 Hooks 是一个单向链表
+
+{% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
+```javascript
+export type Hook = {|
+  memoizedState: any, // 指向当前渲染节点 Fiber, 上一次完整更新之后的最终状态值
+  baseState: any, // 初始化 initialState， 已经每次 dispatch 之后 newState
+  baseQueue: Update<any, any> | null, // 当前需要更新的 Update ，每次更新完之后，会赋值上一个 update，方便 react 在渲染错误的边缘，数据回溯
+  queue: UpdateQueue<any, any> | null, // 缓存的更新队列，存储多次更新行为
+  next: Hook | null, // link 到下一个 hooks，通过 next 串联每一 hooks
+|};
+```
+{% endcode %}
+
+### Update & UpdateQueue
+
+```javascript
+type Update<S, A> = {|
+  lane: Lane, // 优先级，之前使用的 expirationTime: ExpirationTime
+  action: A,
+  eagerReducer: ((S, A) => S) | null,
+  eagerState: S | null,
+  next: Update<S, A>, // link 下一个 Update
+|};
+
+type UpdateQueue<S, A> = {|
+  pending: Update<S, A> | null,
+  interleaved: Update<S, A> | null,
+  lanes: Lanes,
+  dispatch: (A => mixed) | null,
+  lastRenderedReducer: ((S, A) => S) | null,
+  lastRenderedState: S | null,
+|};
+```
+
+### HooksDispatcherOnMount & HooksDispatcherOnUpdate 
+
+还有两个 Dispatch 的类型定义需要关注一下，一个是首次加载时的 HooksDispatcherOnMount，另一个是更新时的 HooksDispatcherOnUpdate。
+
+{% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
+```javascript
+const HooksDispatcherOnMount: Dispatcher = {
+  readContext,
+
+  useCallback: mountCallback,
+  useContext: readContext,
+  useEffect: mountEffect,
+  useImperativeHandle: mountImperativeHandle,
+  useLayoutEffect: mountLayoutEffect,
+  useMemo: mountMemo,
+  useReducer: mountReducer,
+  useRef: mountRef,
+  useState: mountState,
+  useDebugValue: mountDebugValue,
+  useDeferredValue: mountDeferredValue,
+  useTransition: mountTransition,
+  useMutableSource: mountMutableSource,
+  useOpaqueIdentifier: mountOpaqueIdentifier,
+
+  unstable_isNewReconciler: enableNewReconciler,
+};
+
+const HooksDispatcherOnUpdate: Dispatcher = {
+  readContext,
+
+  useCallback: updateCallback,
+  useContext: readContext,
+  useEffect: updateEffect,
+  useImperativeHandle: updateImperativeHandle,
+  useLayoutEffect: updateLayoutEffect,
+  useMemo: updateMemo,
+  useReducer: updateReducer,
+  useRef: updateRef,
+  useState: updateState,
+  useDebugValue: updateDebugValue,
+  useDeferredValue: updateDeferredValue,
+  useTransition: updateTransition,
+  useMutableSource: updateMutableSource,
+  useOpaqueIdentifier: updateOpaqueIdentifier,
+
+  unstable_isNewReconciler: enableNewReconciler,
+};
+```
+{% endcode %}
+
+## 首次渲染
+
+React Fiber 会从 packages/react-reconciler/src/ReactFiberBeginWork.js 中的 beginWork\(\) 开始执行，对于 Function Component，其走以下逻辑加载或更新组件：
+
+{% code title="packages\\react-reconciler\\src\\ReactFiberBeginWork.js " %}
+```javascript
+function beginWork() {
+  //....
+    case FunctionComponent: {
+      const Component = workInProgress.type;
+      const unresolvedProps = workInProgress.pendingProps;
+      const resolvedProps =
+        workInProgress.elementType === Component
+          ? unresolvedProps
+          : resolveDefaultProps(Component, unresolvedProps);
+      return updateFunctionComponent(
+        current,
+        workInProgress,
+        Component,
+        resolvedProps,
+        renderLanes,
+      );
+    }
+  //...
+}
+```
+{% endcode %}
+
+### updateFunctionComponent
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberBeginWork.js" %}
 ```javascript
@@ -182,6 +313,10 @@ export function bailoutHooks(
 }
 ```
 {% endcode %}
+
+###  renderWithHooks
+
+React Hooks 的渲染核心入口是 renderWithHooks。
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
 ```javascript
@@ -334,7 +469,20 @@ export function renderWithHooks<Props, SecondArg>(
 ```
 {% endcode %}
 
-Hooks Dispatcher 存放地
+renderWithHooks 包括三个部分，首先是赋值 4.1 中提到的 ReactCurrentDispatcher.current，后续是做 didScheduleRenderPhaseUpdate 以及一些初始化的工作。核心是第一部分，我们来看看：
+
+```javascript
+nextCurrentHook = current !== null ? current.memoizedState : null;
+
+ReactCurrentDispatcher.current =
+    nextCurrentHook === null
+      ? HooksDispatcherOnMount
+      : HooksDispatcherOnUpdate;
+```
+
+如果当前 Fiber 为空，就认为是首次加载，ReactCurrentDispatcher.current.useState 将赋值成 HooksDispatcherOnMount.useState，否则赋值 HooksDispatcherOnUpdate.useState。根据 4.2 中的类型定义，即首次加载时，useState = ReactCurrentDispatcher.current.useState = HooksDispatcherOnMount.useState = mountState；更新时 useState = ReactCurrentDispatcher.current.useState = HooksDispatcherOnUpdate.useState = updateState。
+
+### dispatchAction
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
 ```javascript
@@ -429,60 +577,11 @@ function dispatchAction<S, A>(
   }
 }
 
-const HooksDispatcherOnMount: Dispatcher = {
-  readContext,
-
-  useCallback: mountCallback,
-  useContext: readContext,
-  useEffect: mountEffect,
-  useImperativeHandle: mountImperativeHandle,
-  useLayoutEffect: mountLayoutEffect,
-  useMemo: mountMemo,
-  useReducer: mountReducer,
-  useRef: mountRef,
-  useState: mountState,
-  useDebugValue: mountDebugValue,
-  useDeferredValue: mountDeferredValue,
-  useTransition: mountTransition,
-  useMutableSource: mountMutableSource,
-  useOpaqueIdentifier: mountOpaqueIdentifier,
-
-  unstable_isNewReconciler: enableNewReconciler,
-};
-
-const HooksDispatcherOnUpdate: Dispatcher = {
-  readContext,
-
-  useCallback: updateCallback,
-  useContext: readContext,
-  useEffect: updateEffect,
-  useImperativeHandle: updateImperativeHandle,
-  useLayoutEffect: updateLayoutEffect,
-  useMemo: updateMemo,
-  useReducer: updateReducer,
-  useRef: updateRef,
-  useState: updateState,
-  useDebugValue: updateDebugValue,
-  useDeferredValue: updateDeferredValue,
-  useTransition: updateTransition,
-  useMutableSource: updateMutableSource,
-  useOpaqueIdentifier: updateOpaqueIdentifier,
-
-  unstable_isNewReconciler: enableNewReconciler,
-};
 ```
 {% endcode %}
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.js" %}
 ```javascript
-export type Hook = {|
-  memoizedState: any,
-  baseState: any,
-  baseQueue: Update<any, any> | null,
-  queue: UpdateQueue<any, any> | null,
-  next: Hook | null,
-|};
-
 function mountWorkInProgressHook(): Hook {
   const hook: Hook = {
     memoizedState: null,
@@ -506,6 +605,10 @@ function mountWorkInProgressHook(): Hook {
 ```
 {% endcode %}
 
+![](../../.gitbook/assets/image%20%284%29.png)
+
+## 更新
+
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.new.js" %}
 ```javascript
 function updateWorkInProgressHook(): Hook {
@@ -514,6 +617,9 @@ function updateWorkInProgressHook(): Hook {
   // clone, or a work-in-progress hook from a previous render pass that we can
   // use as a base. When we reach the end of the base list, we must switch to
   // the dispatcher used for mounts.
+  // 此函数用于更新和由渲染阶段更新触发的重新渲染。
+  // 假设有一个我们可以克隆的当前钩子，或者一个我们可以用作基础的来自先前渲染通道的正在进行中的钩子。
+  // 当我们到达基本列表的末尾时，我们必须切换到用于挂载的调度程序。
   let nextCurrentHook: null | Hook;
   if (currentHook === null) {
     const current = currentlyRenderingFiber.alternate;
@@ -570,4 +676,10 @@ function updateWorkInProgressHook(): Hook {
 }
 ```
 {% endcode %}
+
+{% hint style="info" %}
+参考文档
+
+1. [React Hooks 源码解析（3）：useState](https://me.ursb.me/archives/useState.html)😃 
+{% endhint %}
 
