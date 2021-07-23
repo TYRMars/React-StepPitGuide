@@ -86,6 +86,23 @@ const ReactCurrentDispatcher = {
 }
 ```
 
+## 全局变量
+
+```javascript
+// These are set right before calling the component.
+let renderLanes: Lanes = NoLanes;
+// The work-in-progress fiber. I've named it differently to distinguish it from
+// the work-in-progress hook.
+let currentlyRenderingFiber: Fiber = (null: any);
+
+// Hooks are stored as a linked list on the fiber's memoizedState field. The
+// current hook list is the list that belongs to the current fiber. The
+// work-in-progress hook list is a new list that will be added to the
+// work-in-progress fiber.
+let currentHook: Hook | null = null;
+let workInProgressHook: Hook | null = null;
+```
+
 ## Hooks类型定义
 
 ### Hook
@@ -620,6 +637,9 @@ updateWorkInProgressHook 获取到了当前工作中的 workInProgressHook
 
 {% code title="packages\\react-reconciler\\src\\ReactFiberHooks.new.js" %}
 ```javascript
+let currentHook: Hook | null = null;
+let workInProgressHook: Hook | null = null;
+
 function updateWorkInProgressHook(): Hook {
   // This function is used both for updates and for re-renders triggered by a
   // render phase update. It assumes there is either a current hook we can
