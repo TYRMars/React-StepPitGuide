@@ -133,7 +133,7 @@ type Update<S, A> = {|
 |};
 
 type UpdateQueue<S, A> = {|
-  pending: Update<S, A> | null,
+  pending: Update<S, A> | null, // 如果有在处理的Update，则pending状态
   interleaved: Update<S, A> | null,
   lanes: Lanes,
   dispatch: (A => mixed) | null,

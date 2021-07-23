@@ -114,11 +114,13 @@ function updateReducer<S, I, A>(
 
   const current: Hook = (currentHook: any);
 
-  // The last rebase update that is NOT part of the base state.
+  // fiber 渲染后，尚未执行完成 update 更新，存于 currentFiber
   let baseQueue = current.baseQueue;
 
-  // The last pending update that hasn't been processed yet.
+  // 排队中的 update 更新，存于 workInProgressFiber
   const pendingQueue = queue.pending;
+  
+ // 将排队中的 update 更新添加到 baseQueue
   if (pendingQueue !== null) {
     // We have new updates that haven't been processed yet.
     // We'll add them to the base queue.
@@ -127,7 +129,7 @@ function updateReducer<S, I, A>(
       const baseFirst = baseQueue.next;
       const pendingFirst = pendingQueue.next;
       baseQueue.next = pendingFirst;
-      pendingQueue.next = baseFirst;
+      pendingQueue.next = baseFirst; // pending 队列尾节点添加 baseFirst
     }
     if (__DEV__) {
       if (current.baseQueue !== baseQueue) {
@@ -154,6 +156,7 @@ function updateReducer<S, I, A>(
     let update = first;
     do {
       const updateLane = update.lane;
+      // update 优先级不足，将其存入 newBaseQueueList 等待更新
       if (!isSubsetOfLanes(renderLanes, updateLane)) {
         // Priority is insufficient. Skip this update. If this is the first
         // skipped update, the previous update/state is the new base
@@ -161,8 +164,8 @@ function updateReducer<S, I, A>(
         const clone: Update<S, A> = {
           lane: updateLane,
           action: update.action,
-          eagerReducer: update.eagerReducer,
-          eagerState: update.eagerState,
+          eagerReducer: update.eagerReducer, // eagerReducer 缓存上一个 reducer
+          eagerState: update.eagerState, // eagerState 缓存上一个状态
           next: (null: any),
         };
         if (newBaseQueueLast === null) {
@@ -181,6 +184,8 @@ function updateReducer<S, I, A>(
         markSkippedUpdateLanes(updateLane);
       } else {
         // This update does have sufficient priority.
+        // 同 UpdateQueue，当优先级高的 update 任务在优先级低的 update 任务后
+        // 添加到 newBaseQueueList 中，更新处理会执行多次
 
         if (newBaseQueueLast !== null) {
           const clone: Update<S, A> = {
@@ -196,7 +201,9 @@ function updateReducer<S, I, A>(
           newBaseQueueLast = newBaseQueueLast.next = clone;
         }
 
-        // Process this update.
+        // hook.dispatch 变更状态后再执行组件的渲染函数
+        // 若 reducer 未变更，复用之前的状态 update.eagerState
+        // 若 reducer 变更，使用 reducer 计算最新的状态
         if (update.eagerReducer === reducer) {
           // If this update was processed eagerly, and its reducer matches the
           // current reducer, we can use the eagerly computed state.
@@ -228,6 +235,7 @@ function updateReducer<S, I, A>(
     queue.lastRenderedState = newState;
   }
 
+  // 多次的更改
   // Interleaved updates are stored on a separate queue. We aren't going to
   // process them during this render, but we do need to track which lanes
   // are remaining.
