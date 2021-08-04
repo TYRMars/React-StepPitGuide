@@ -5,8 +5,3 @@
 {% embed url="https://zh-hans.reactjs.org/docs/reconciliation.html" %}
 
 {% embed url="https://github.com/reactjs/react-basic" %}
-
-
-
-
-
