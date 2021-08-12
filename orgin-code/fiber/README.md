@@ -6,6 +6,8 @@
 
 {% embed url="https://github.com/reactjs/react-basic" %}
 
+[https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
+
 [https://juejin.cn/post/6943896410987659277](https://juejin.cn/post/6943896410987659277#heading-8)
 
 
