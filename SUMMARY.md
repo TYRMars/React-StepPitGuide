@@ -73,8 +73,10 @@
   * [Redux 自制arr中间件](zhuang-tai-guan-li/redux_use/redux-zi-zhi-arr-zhong-jian-jian.md)
 * [Mobx](zhuang-tai-guan-li/mobx/README.md)
   * [Mobx 思想](zhuang-tai-guan-li/mobx/mobx-si-xiang.md)
+* [RXJS](zhuang-tai-guan-li/rxjs.md)
+* [immutable](zhuang-tai-guan-li/immutable.md)
 
-## 源码 <a id="orgin-code"></a>
+## 源码思考 <a id="orgin-code"></a>
 
 * [简述](orgin-code/jian-shu.md)
 * [SimpleReact](orgin-code/react-10.md)
