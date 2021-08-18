@@ -83,7 +83,8 @@
 * [SimpleReact](orgin-code/react-10.md)
 * [Fiber](orgin-code/fiber/README.md)
   * [数据结构](orgin-code/fiber/shu-ju-jie-gou.md)
-  * [Scheduler](orgin-code/fiber/scheduler.md)
+  * [Scheduler 调度](orgin-code/fiber/scheduler.md)
+  * [Concurrent 异步渲染](orgin-code/fiber/concurrent-yi-bu-xuan-ran.md)
 * [Hooks](orgin-code/hooks/README.md)
   * [useState](orgin-code/hooks/usestate.md)
 
