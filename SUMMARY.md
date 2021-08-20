@@ -80,6 +80,7 @@
 ## 源码思考 <a id="orgin-code"></a>
 
 * [简述](orgin-code/jian-shu.md)
+* [再说生命周期](orgin-code/zai-shuo-sheng-ming-zhou-qi.md)
 * [SimpleReact](orgin-code/react-10.md)
 * [Fiber](orgin-code/fiber/README.md)
   * [数据结构](orgin-code/fiber/shu-ju-jie-gou.md)
