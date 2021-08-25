@@ -49,7 +49,5 @@ React可以根据优先级高低去实现工作单元的打断和恢复
 
 [https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
 
-
-
 [https://juejin.cn/post/6943896410987659277](https://juejin.cn/post/6943896410987659277)
 
