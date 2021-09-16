@@ -1,4 +1,4 @@
-# React JSX
+# JSX
 
 ## JSX的来历
 

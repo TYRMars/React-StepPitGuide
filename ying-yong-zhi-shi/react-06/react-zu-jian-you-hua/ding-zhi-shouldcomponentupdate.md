@@ -45,11 +45,11 @@ export default App
 
 通过在浏览器中在链接上加入`/?react_pref`。
 
-![](../../.gitbook/assets/微信截图_20171230202738.png)
+![](../../../.gitbook/assets/微信截图_20171230202738.png)
 
 通过此方法可以在浏览器默认的性能监视器Performance中查看性能改变
 
-![](../../.gitbook/assets/微信截图_20171230201617.png)![](../../.gitbook/assets/微信截图_20171230201653.png)
+![](../../../.gitbook/assets/微信截图_20171230201617.png)![](../../../.gitbook/assets/微信截图_20171230201653.png)
 
 * test
 

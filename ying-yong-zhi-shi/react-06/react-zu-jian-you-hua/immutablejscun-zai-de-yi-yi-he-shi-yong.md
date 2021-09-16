@@ -32,7 +32,7 @@ function compareObj(obj1,obj2){
 }
 ```
 
-![](../../.gitbook/assets/obj1.png)
+![](../../../.gitbook/assets/obj1.png)
 
 * 查看obj的属性采用for in
 

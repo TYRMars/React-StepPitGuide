@@ -1,4 +1,4 @@
-# React 多组件嵌套
+# 多组件嵌套
 
 * `webpack-dev-server`环境运行起来,这里主要是明白了React如何做嵌套
 * `src/js/components`下创建`header.js`书写代码✍️

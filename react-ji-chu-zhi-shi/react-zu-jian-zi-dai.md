@@ -1,4 +1,4 @@
-# React 组件Child
+# Child组件
 
 我们先来看一个例子
 

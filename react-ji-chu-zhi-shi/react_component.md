@@ -1,4 +1,4 @@
-# React 组件
+# 组件
 
 * 组件是`React`的基石，所有的`React`应用程序都是基于组件的。
 * 之前`React`组件，使用`React.createClass`来进行声明

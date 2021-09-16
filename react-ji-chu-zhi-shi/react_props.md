@@ -1,4 +1,4 @@
-# React Props属性
+# Props属性
 
 ## Props事例
 

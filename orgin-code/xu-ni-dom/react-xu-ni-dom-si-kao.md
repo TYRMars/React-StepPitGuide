@@ -1,4 +1,4 @@
-# React 虚拟DOM思考
+# 虚拟DOM思考（React 16前）
 
 ## React 虚拟DOM思考
 
@@ -49,7 +49,7 @@
 
 ## 2.Virtual DOM 与 React Diff算法
 
-## ![](../.gitbook/assets/微信截图_20180102170018.png)
+## ![](../../.gitbook/assets/微信截图_20180102170018.png)
 
 #### Example\([virtual dom](https://github.com/Matt-Esch/virtual-dom#example)\)
 

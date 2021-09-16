@@ -1,4 +1,4 @@
-# React CSS模块化
+# CSS模块化
 
 * `"babel-plugin-react-html-attrs": "^2.0.0"`让JSX中`className`能变回原来`class`
 * webpack要重新配置

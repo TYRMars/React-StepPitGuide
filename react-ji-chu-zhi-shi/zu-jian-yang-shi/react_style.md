@@ -1,4 +1,4 @@
-# React CSS內联式样
+# CSS內联式样
 
 * 通过header.js演示JSX样式控制,直接內联到标签中的style
 
