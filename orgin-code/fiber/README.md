@@ -4,7 +4,7 @@ React 从 原有的stack reconciler 变成了现有的 Fiber reconciler。
 
 ## Fiber出现原因
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 js引擎和页面渲染引擎是在同一个渲染线程之内，两者是互斥关系。
 
@@ -19,11 +19,11 @@ js引擎和页面渲染引擎是在同一个渲染线程之内，两者是互斥
 {% hint style="warning" %}
 React 之前的方式 ：
 
-Reconciler\(找不同\) -&gt; Renderer\(渲染不同\)
+Reconciler(找不同) -> Renderer(渲染不同)
 
 React改为Fiber以后：增加了调度层和修改了Reconciler层
 
-Scheduler\(调度更新优先级\) -&gt; Reconciler\(找不同\) -&gt; Renderer\(渲染不同\)
+Scheduler(调度更新优先级) -> Reconciler(找不同) -> Renderer(渲染不同)
 {% endhint %}
 
 ### 生命周期影响
@@ -47,7 +47,8 @@ React可以根据优先级高低去实现工作单元的打断和恢复
 
 {% embed url="https://github.com/reactjs/react-basic" %}
 
-[https://github.com/acdlite/react-fiber-architecture](https://github.com/acdlite/react-fiber-architecture)
+{% embed url="https://github.com/acdlite/react-fiber-architecture" %}
 
-[https://juejin.cn/post/6943896410987659277](https://juejin.cn/post/6943896410987659277)
-
+{% embed url="https://juejin.cn/post/6943896410987659277" %}
+走进React世界
+{% endembed %}
